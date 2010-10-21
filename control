@@ -6,3 +6,4 @@ Version: 0.9
 Architecture: iphoneos-arm
 Author: Dustin Howett <dustin@howett.net>
 Maintainer: Dustin Howett <dustin@howett.net>
+Section: System
