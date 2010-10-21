@@ -1,10 +1,7 @@
 #include <nlist.h>
+#include <dlfcn.h>
 
-@interface _VIPAppliance: NSObject
-@end
-
-@implementation _VIPAppliance
-+ (NSMutableArray *) generateCustomWhiteList {
+static NSMutableArray *generateCustomWhiteList() {
 	NSMutableArray *whiteList = [NSMutableArray array];
 
 	NSString *lowtidePath = [[NSBundle mainBundle] bundlePath];
@@ -24,23 +21,36 @@
 	return whiteList;
 }
 
-
 static id *_sApplianceWhiteList;
 
-+ (void)load {
+static __attribute__((constructor)) void _localInit() {
+	NSAutoreleasePool *p = [[NSAutoreleasePool alloc] init];
+	void *handle = dlopen("/Library/MobileSubstrate/MobileSubstrate.dylib", RTLD_NOW);
+	if(!handle) {
+		NSLog(@"Couldn't load MobileSubstrate :(");
+		goto _out;
+	}
+
+	NSLog(@"Loaded");
+
 	struct nlist nl[2];
 	memset(nl, 0, sizeof(nl));
 	nl[0].n_name = (char *)"_sApplianceWhiteList";
 	nlist("/System/Library/PrivateFrameworks/BackRow.framework/BackRow", nl);
 	_sApplianceWhiteList = (id*)nl[0].n_value;
+	if(_sApplianceWhiteList == NULL) {
+		NSLog(@"Holy crap, everything is exploding (no _sApplianceWhiteList :(). Bail out!");
+		goto _out;
+	}
 
-	NSLog(@"Loaded");
-	NSLog(@"%16.16x", *(int*)_sApplianceWhiteList);
-	NSLog(@"%@", *(id*)_sApplianceWhiteList);
+	NSLog(@"_sApplianceWhiteList = %16.16x", *(int*)_sApplianceWhiteList);
+	NSLog(@"existing whitelist: %@", *(id*)_sApplianceWhiteList);
 	[*(id*)_sApplianceWhiteList release];
-	*(id*)_sApplianceWhiteList = [[self generateCustomWhiteList] retain];
-	NSLog(@"%@", *(id*)_sApplianceWhiteList);
-}
-@end
+	*(id*)_sApplianceWhiteList = [generateCustomWhiteList() retain];
+	NSLog(@"new whitelist: %@", *(id*)_sApplianceWhiteList);
 
+_out:
+	[p drain];
+	return;
+}
 // vim:ft=objc
