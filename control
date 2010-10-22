@@ -3,7 +3,7 @@ Name: Beigelist
 Provides: whitelist
 Depends: mobilesubstrate
 Definition: evade the BackRow appliance whitelist! it might be some sort of ecru.
-Version: 0.9
+Version: 1.0
 Architecture: iphoneos-arm
 Author: Dustin Howett <dustin@howett.net>
 Maintainer: Dustin Howett <dustin@howett.net>
