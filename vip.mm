@@ -1,4 +1,4 @@
-#include <nlist.h>
+#include <mach-o/nlist.h>
 #include <dlfcn.h>
 
 static NSMutableArray *generateCustomWhiteList() {
@@ -25,17 +25,11 @@ static id *_sApplianceWhiteList;
 
 static __attribute__((constructor)) void _localInit() {
 	NSAutoreleasePool *p = [[NSAutoreleasePool alloc] init];
-	void *handle = dlopen("/Library/MobileSubstrate/MobileSubstrate.dylib", RTLD_NOW);
-	if(!handle) {
-		NSLog(@"Couldn't load MobileSubstrate :(");
-		goto _out;
-	}
-
 	NSLog(@"Loaded");
 
 	struct nlist nl[2];
 	memset(nl, 0, sizeof(nl));
-	nl[0].n_name = (char *)"_sApplianceWhiteList";
+	nl[0].n_un.n_name = (char *)"_sApplianceWhiteList";
 	nlist("/System/Library/PrivateFrameworks/BackRow.framework/BackRow", nl);
 	_sApplianceWhiteList = (id*)nl[0].n_value;
 	if(_sApplianceWhiteList == NULL) {
