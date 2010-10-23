@@ -11,5 +11,8 @@ beigelist_FILES = vip.mm
 #include $(FW_MAKEDIR)/bundle.mk
 include $(FW_MAKEDIR)/tweak.mk
 
-after-install::
-	install.exec "killall -9 Lowtide"
+#after-install::
+#install.exec "killall -9 Lowtide"
+
+package-build-deb-buildno::
+	cp extrainst_ $(FW_STAGING_DIR)/DEBIAN/extrainst_

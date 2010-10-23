@@ -1,0 +1,3 @@
+#!/bin/bash
+launchctl unload /System/Library/LaunchDaemons/com.apple.frontrow.plist
+launchctl load /System/Library/LaunchDaemons/com.apple.frontrow.plist
