@@ -24,6 +24,18 @@
 extern "C" void BRSystemLog(int level, NSString *format, ...);
 /* }}} */
 
+#import "Beigelist.h"
+
+static NSMutableArray *_applianceLoadListeners = nil;
+@implementation Beigelist
++ (void)registerApplianceLoadListener:(Class<BeigelistApplianceLoadListener>)loadListener {
+	if(!_applianceLoadListeners) {
+		_applianceLoadListeners = [[NSMutableArray alloc] init];
+	}
+	[_applianceLoadListeners addObject:loadListener];
+}
+@end
+
 %hook BRApplianceManager
 - (void)_loadApplianceAtPath:(NSString *)path {
 	NSBundle *applianceBundle = [NSBundle bundleWithPath:path];
@@ -60,6 +72,12 @@ extern "C" void BRSystemLog(int level, NSString *format, ...);
 		BRSystemLog(3, @"Appliance %@ not loaded due parental control.", [applianceBundle bundleIdentifier]);
 	}
 
+	for(Class<BeigelistApplianceLoadListener> loadListener in _applianceLoadListeners) {
+		if(class_respondsToSelector(object_getClass(loadListener), @selector(shouldLoadApplianceBundle:))) {
+			if(![loadListener shouldLoadApplianceBundle:applianceBundle]) return;
+		}
+	}
+
 	id<BRAppliance> appliance = [[principalClass alloc] init];
 	if([[appliance applianceCategories] count] == 0 && [applianceInfo hideIfNoCategories]) {
 		BRSystemLog(3, @"Appliance %@ not loaded because it doesn't have any categories.", [applianceBundle bundleIdentifier]);
@@ -69,6 +87,13 @@ extern "C" void BRSystemLog(int level, NSString *format, ...);
 
 	[MSHookIvar<NSMutableArray *>(self, "_applianceList") addObject:appliance];
 	[appliance release];
+
+	for(Class<BeigelistApplianceLoadListener> loadListener in _applianceLoadListeners) {
+		if(class_respondsToSelector(object_getClass(loadListener), @selector(loadedApplianceBundle:))) {
+			[loadListener loadedApplianceBundle:applianceBundle];
+		}
+	}
+
 	return;
 }
 %end
