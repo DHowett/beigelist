@@ -2,9 +2,11 @@ include theos/makefiles/common.mk
 
 TWEAK_NAME = beigelist
 beigelist_FILES = vip2.xm
-beigelist_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub -undefined dynamic_lookup
+beigelist_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub
+beigelist_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub
+beigelist_LDFLAGS += -undefined dynamic_lookup
 
-include $(FW_MAKEDIR)/tweak.mk
+include $(THEOS_MAKE_PATH)/tweak.mk
 
 $(THEOS_OBJ_DIR)/BackRow.stub: override THEOS_CURRENT_INSTANCE = BackRowStub
 $(THEOS_OBJ_DIR)/BackRow.stub: stub.c
