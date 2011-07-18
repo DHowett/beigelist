@@ -27,5 +27,8 @@ $(THEOS_OBJ_DIR)/AppleTV.stub: stub.c
 
 $(THEOS_OBJ_DIR)/beigelist.dylib: $(THEOS_OBJ_DIR)/BackRow.stub $(THEOS_OBJ_DIR)/AppleTV.stub
 
+after-stage::
+	mkdir -p $(THEOS_STAGING_DIR)/Library/Appliances
+
 before-package::
 	cp extrainst_ $(THEOS_STAGING_DIR)/DEBIAN/extrainst_

@@ -13,6 +13,10 @@
 + (id)sharedInstance;
 @end
 
+@interface BRApplianceManager: BRSingleton { }
+- (void)_loadApplianceAtPath:(NSString *)folder;
+@end
+
 @interface BRFeatureManager: BRSingleton { }
 - (BOOL)isFeatureEnabled:(id)feature;
 @end
@@ -95,5 +99,19 @@ static NSMutableArray *_applianceLoadListeners = nil;
 	}
 
 	return;
+}
+
+- (void)loadAppliances {
+	%orig;
+
+	NSDirectoryEnumerator *iterator = [[NSFileManager defaultManager] enumeratorAtPath:@"/Library/Appliances"];
+
+	NSString *filePath = nil;
+	while((filePath = [iterator nextObject])) {
+		if([filePath hasSuffix:@"frappliance"]) {
+			[self _loadApplianceAtPath:[@"/Library/Appliances" stringByAppendingPathComponent:filePath]];
+			[iterator skipDescendents];
+		}
+	}
 }
 %end
