@@ -14,7 +14,8 @@
 @end
 
 @interface BRApplianceManager: BRSingleton { }
-- (void)_loadApplianceAtPath:(NSString *)folder;
+@property (nonatomic, readwrite, retain) NSArray *appliances;
+- (id)_loadApplianceAtPath:(NSString *)folder;
 @end
 
 @interface BRFeatureManager: BRSingleton { }
@@ -30,6 +31,8 @@ extern "C" void BRSystemLog(int level, NSString *format, ...);
 
 #import "Beigelist.h"
 
+static BOOL _8F455Plus = NO;
+
 static NSMutableArray *_applianceLoadListeners = nil;
 @implementation Beigelist
 + (void)registerApplianceLoadListener:(Class<BeigelistApplianceLoadListener>)loadListener {
@@ -41,17 +44,17 @@ static NSMutableArray *_applianceLoadListeners = nil;
 @end
 
 %hook BRApplianceManager
-- (void)_loadApplianceAtPath:(NSString *)path {
+- (id)_loadApplianceAtPath:(NSString *)path {
 	NSBundle *applianceBundle = [NSBundle bundleWithPath:path];
-	if(!applianceBundle) return;
+	if(!applianceBundle) return nil;
 
 	BRApplianceInfo *applianceInfo = [BRApplianceInfo infoForApplianceBundle:applianceBundle];
-	if(![applianceBundle bundleIdentifier]) return;
+	if(![applianceBundle bundleIdentifier]) return nil;
 
 	Class principalClass = [applianceBundle principalClass];
 	if(![principalClass conformsToProtocol:@protocol(BRAppliance)]) {
 		BRSystemLog(3, @"Appliance %@'s principal class %@ does not conform to the BRAppliance protocol.", [applianceBundle bundleIdentifier], NSStringFromClass(principalClass));
-		return;
+		return nil;
 	}
 
 	NSDictionary *infoDictionary = [applianceBundle infoDictionary];
@@ -60,14 +63,14 @@ static NSMutableArray *_applianceLoadListeners = nil;
 	if(featureName) {
 		if(![[BRFeatureManager sharedInstance] isFeatureEnabled:featureName]) {
 			BRSystemLog(3, @"Appliance %@ not loaded due to missing feature %@.", [applianceBundle bundleIdentifier], featureName);
-			return;
+			return nil;
 		}
 	}
 
 	if(antiFeatureName) {
 		if([[BRFeatureManager sharedInstance] isFeatureEnabled:antiFeatureName]) {
 			BRSystemLog(3, @"Appliance %@ not loaded due to present anti-feature %@.", [applianceBundle bundleIdentifier], antiFeatureName);
-			return;
+			return nil;
 		}
 	}
 
@@ -78,19 +81,19 @@ static NSMutableArray *_applianceLoadListeners = nil;
 
 	for(Class<BeigelistApplianceLoadListener> loadListener in _applianceLoadListeners) {
 		if(class_respondsToSelector(object_getClass(loadListener), @selector(shouldLoadApplianceBundle:))) {
-			if(![loadListener shouldLoadApplianceBundle:applianceBundle]) return;
+			if(![loadListener shouldLoadApplianceBundle:applianceBundle]) return nil;
 		}
 	}
 
-	id<BRAppliance> appliance = [[principalClass alloc] init];
+	id<BRAppliance> appliance = [[[principalClass alloc] init] autorelease];
 	if([[appliance applianceCategories] count] == 0 && [applianceInfo hideIfNoCategories]) {
 		BRSystemLog(3, @"Appliance %@ not loaded because it doesn't have any categories.", [applianceBundle bundleIdentifier]);
-		[appliance release];
-		return;
+		return nil;
 	}
 
-	[MSHookIvar<NSMutableArray *>(self, "_applianceList") addObject:appliance];
-	[appliance release];
+	if(!_8F455Plus) {
+		[MSHookIvar<NSMutableArray *>(self, "_applianceList") addObject:appliance];
+	}
 
 	for(Class<BeigelistApplianceLoadListener> loadListener in _applianceLoadListeners) {
 		if(class_respondsToSelector(object_getClass(loadListener), @selector(loadedApplianceBundle:))) {
@@ -98,20 +101,31 @@ static NSMutableArray *_applianceLoadListeners = nil;
 		}
 	}
 
-	return;
+	return appliance;
 }
 
 - (void)loadAppliances {
 	%orig;
+
+	NSMutableArray *appliances = (_8F455Plus ? [[self appliances] mutableCopy] : nil);
 
 	NSDirectoryEnumerator *iterator = [[NSFileManager defaultManager] enumeratorAtPath:@"/Library/Appliances"];
 
 	NSString *filePath = nil;
 	while((filePath = [iterator nextObject])) {
 		if([filePath hasSuffix:@"frappliance"]) {
-			[self _loadApplianceAtPath:[@"/Library/Appliances" stringByAppendingPathComponent:filePath]];
+			id appliance = [self _loadApplianceAtPath:[@"/Library/Appliances" stringByAppendingPathComponent:filePath]];
+			[appliances addObject:appliance];
 			[iterator skipDescendents];
 		}
 	}
+
+	if(_8F455Plus) [self setAppliances:[appliances autorelease]];
 }
 %end
+
+%class BRApplianceManager
+%ctor {
+	%init;
+	_8F455Plus = [%c(BRApplianceManager) instancesRespondToSelector:@selector(setAppliances:)];
+}
