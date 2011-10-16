@@ -75,8 +75,9 @@ static NSMutableArray *_applianceLoadListeners = nil;
 	}
 
 	int access = [[BRParentalControlManager sharedInstance] computeAccessModeForAppliance:[applianceInfo key] withCategoryIdentifier:nil];
-	if(access != 1) {
+	if(access == 1) {
 		BRSystemLog(3, @"Appliance %@ not loaded due parental control.", [applianceBundle bundleIdentifier]);
+		return nil;
 	}
 
 	for(Class<BeigelistApplianceLoadListener> loadListener in _applianceLoadListeners) {
