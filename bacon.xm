@@ -13,6 +13,7 @@ IMP queryParameters_IMP = NULL;
 %end
 
 %ctor {
+	BRSystemLog(3, @"0bacon (Save Our Bacon) (beigelist-%s) loaded.", VERSION);
 	%init;
 	Method queryParameters = class_getInstanceMethod(objc_getClass("NSURL"), @selector(_queryParameters));
 	queryParameters_IMP = method_getImplementation(queryParameters);

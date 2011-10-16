@@ -11,6 +11,8 @@ beigelist_LDFLAGS += -undefined dynamic_lookup
 0bacon_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 0bacon_LDFLAGS += -undefined dynamic_lookup
 
+ADDITIONAL_CFLAGS = -DVERSION="\"$(THEOS_PACKAGE_BASE_VERSION)\""
+
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 $(THEOS_OBJ_DIR)/%.stub.dylib: override THEOS_CURRENT_INSTANCE = $*

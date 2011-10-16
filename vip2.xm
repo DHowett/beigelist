@@ -127,6 +127,7 @@ static NSMutableArray *_applianceLoadListeners = nil;
 
 %class BRApplianceManager
 %ctor {
+	BRSystemLog(3, @"beigelist (beigelist-%s) loaded.", VERSION);
 	%init;
 	_8F455Plus = [%c(BRApplianceManager) instancesRespondToSelector:@selector(setAppliances:)];
 }
