@@ -24,6 +24,3 @@ $(THEOS_OBJ_DIR)/0bacon.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_D
 
 after-stage::
 	mkdir -p $(THEOS_STAGING_DIR)/Library/Appliances
-
-before-package::
-	cp extrainst_ $(THEOS_STAGING_DIR)/DEBIAN/extrainst_
