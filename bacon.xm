@@ -2,12 +2,13 @@ extern "C" void BRSystemLog(int level, NSString *format, ...);
 
 IMP queryParameters_IMP = NULL;
 
-%hook BRMainMenuController
-- (void)reloadMainMenu {
+%hook NSURL
+- (id)URLWithQueryParameter:(id)parameter value:(id)value {
 	Method queryParameters = class_getInstanceMethod(objc_getClass("NSURL"), @selector(_queryParameters));
 	IMP orig = method_setImplementation(queryParameters, queryParameters_IMP);
-	%orig;
+	id ret = %orig;
 	method_setImplementation(queryParameters, orig);
+	return ret;
 }
 %end
 
