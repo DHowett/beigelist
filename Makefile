@@ -1,7 +1,9 @@
+
 include theos/makefiles/common.mk
 
 TWEAK_NAME = beigelist 0bacon
-beigelist_FILES = vip2.xm
+beigelist_FILES = vip2.xm Classes/BLAppLegacyCategoryController.m Classes/BLAppLegacyMerchant.m Classes/BLAppManager.m
+beigelist_FILES += Classes/BLAppMerchantInfo.m
 beigelist_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
 beigelist_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 beigelist_LDFLAGS += -undefined dynamic_lookup
@@ -26,3 +28,6 @@ $(THEOS_OBJ_DIR)/0bacon.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_D
 
 after-stage::
 	mkdir -p $(THEOS_STAGING_DIR)/Library/Appliances
+
+after-install::
+	install.exec "killall -9 AppleTV"
