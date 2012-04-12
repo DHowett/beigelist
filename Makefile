@@ -1,12 +1,17 @@
-
+export THEOS_DEVICE_IP=apple-tv.local
 include theos/makefiles/common.mk
 
-TWEAK_NAME = beigelist 0bacon
-beigelist_FILES = vip2.xm Classes/BLAppLegacyCategoryController.m Classes/BLAppLegacyMerchant.m Classes/BLAppManager.m
-beigelist_FILES += Classes/BLAppMerchantInfo.m
+TWEAK_NAME = beigelist beigelist5 0bacon
+beigelist_FILES = vip2.xm 
 beigelist_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
 beigelist_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 beigelist_LDFLAGS += -undefined dynamic_lookup
+
+beigelist5_FILES = vip5.xm Classes/BLAppLegacyCategoryController.m Classes/BLAppLegacyMerchant.m Classes/BLAppManager.m
+beigelist5_FILES += Classes/BLAppMerchantInfo.m
+beigelist5_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
+beigelist5_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
+beigelist5_LDFLAGS += -undefined dynamic_lookup
 
 0bacon_FILES = bacon.xm
 0bacon_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
@@ -24,6 +29,7 @@ $(THEOS_OBJ_DIR)/%.stub.dylib:
 	$(ECHO_LINKING)echo "" | $(TARGET_LD) $(TARGET_LDFLAGS) -dynamiclib -install_name $(_STUB_PATH) -o $@ -x c -; $(TARGET_STRIP) -c $@$(ECHO_END)
 
 $(THEOS_OBJ_DIR)/beigelist.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
+$(THEOS_OBJ_DIR)/beigelist5.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 $(THEOS_OBJ_DIR)/0bacon.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 
 after-stage::

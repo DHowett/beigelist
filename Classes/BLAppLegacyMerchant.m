@@ -67,6 +67,11 @@
     return controller;
 }
 
+- (id)info
+{
+	return [super info];
+}
+
 - (NSString *) title
 { return [[self info] menuTitle]; }
 

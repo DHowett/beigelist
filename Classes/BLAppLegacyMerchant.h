@@ -15,6 +15,7 @@
     int padding[32];
     Class _legacyApplianceClass;
 }
+- (id)info; //attempt to keep the level of warnings of compiler low.
 + (id) merchant;
 - (Class) legacyApplianceClass;
 - (void) setLegacyApplianceClass: (Class) legacyApplianceClass;
