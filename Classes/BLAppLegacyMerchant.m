@@ -61,7 +61,7 @@
 - (BRController *) rootController
 {
 	id controller = nil;
-   BRBaseAppliance *legacyAppliance = [[[_legacyApplianceClass alloc] init] autorelease];
+   BRBaseAppliance *legacyAppliance = [[_legacyApplianceClass alloc] init];
 
 	/*
  
@@ -76,9 +76,12 @@
 	//	NSLog(@"legacyApplianceinfo: %@", [legacyAppliance applianceInfo]);
 		[[BRApplianceManager singleton] _applianceDidReloadCategories:legacyAppliance];
 		controller = [[[BLApplianceController alloc] initWithAppliance:legacyAppliance] autorelease];
+		[legacyAppliance autorelease];
 	
 	} else {
 	
+		[legacyAppliance release];
+		legacyAppliance = nil;
 		//NSLog(@"applianceInfo == nil");
 		(BLAppLegacyCategoryController*)controller = [[[BLAppLegacyCategoryController alloc] init] autorelease];
 		[controller setListTitle: [self title]];
