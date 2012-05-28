@@ -198,6 +198,8 @@
 				
 				if(preferredOrder)
                 { [frappMerchant setPreferredOrder: [preferredOrder floatValue]]; }
+				
+				[frappMerchant setShowInTopRow:[[frappBundleInfoDict objectForKey:kBLShowInTopRow] boolValue]];
                 
 				[_appliances addObject: frappMerchant];
 				NSLog(@"BLAppManager -> loaded legacy %@", NSStringFromClass(frappClass));

@@ -1,5 +1,8 @@
 //AppleTV 5.1
 
+
+
+
 @protocol BRAppliance <NSObject>
 - (id)initWithApplianceInfo:(id)applianceInfo;
 - (id)applianceCategories;
@@ -922,3 +925,254 @@
 - (void)updateBoundMusicStoreMerchantInfo;	// 0x303dbd69
 - (id)view;	// 0x303dbf3d
 @end
+
+//my additions to attempt getting the topPanelControl working in all plugins rather than the legacy view
+
+@protocol BRImageProxy <NSObject>
+- (void)cancelImageRequestsForImageSizes:(int)imageSizes;
+- (id)defaultImageForImageSize:(int)imageSize;
+- (id)imageForImageSize:(int)imageSize;
+@optional
+- (BOOL)imageForImageSizeIsAvailable:(int)imageSizeIsAvailable;
+@required
+- (id)imageIDForImageSize:(int)imageSize;
+- (id)object;
+- (BOOL)supportsImageForImageSize:(int)imageSize;
+@end
+
+
+@interface BRImageControl : BRControl {
+@private
+	id<BRImageProxy> _imageProxy;	// 48 = 0x30
+	BRImage *_image;	// 52 = 0x34
+	BOOL _renderingImage;	// 56 = 0x38
+	BOOL _autoDownsample;	// 57 = 0x39
+	NSString *_artworkIdentifier;	// 60 = 0x3c
+	BOOL _sizeIgnoresPixelBounds;	// 64 = 0x40
+}
+@property(assign) BOOL automaticDownsample;	// G=0x3029a85d; S=0x3029a7d5; converted property
+@property(retain) BRImage *image;	// G=0x3029a769; S=0x3029a679; converted property
+@property(assign) BOOL sizeIgnoresPixelBounds;	// G=0x3029a935; S=0x3029a925; converted property
+- (void)_imageUpdated:(id)updated;	// 0x3029aba9
+- (void)_loadImage;	// 0x3029acad
+- (void)_unloadImage;	// 0x3029ac49
+- (id)accessibilityLabel;	// 0x3029ab89
+- (float)aspectRatio;	// 0x3029a7b5
+// converted property getter: - (BOOL)automaticDownsample;	// 0x3029a85d
+- (void)controlWasActivated;	// 0x3029aaf1
+- (void)controlWasDeactivated;	// 0x3029ab1d
+- (void)dealloc;	// 0x3029a4c5
+- (void)drawInContext:(CGContextRef)context;	// 0x3029a945
+// converted property getter: - (id)image;	// 0x3029a769
+- (CGSize)pixelBounds;	// 0x3029a779
+- (void)setArtworkIdentifier:(id)identifier;	// 0x3029a86d
+// converted property setter: - (void)setAutomaticDownsample:(BOOL)downsample;	// 0x3029a7d5
+// converted property setter: - (void)setImage:(id)image;	// 0x3029a679
+- (void)setImageAsContents:(id)contents;	// 0x3029a6dd
+- (void)setImageProxy:(id)proxy;	// 0x3029a569
+- (void)setImageProxyAsContents:(id)contents;	// 0x3029a5f1
+// converted property setter: - (void)setSizeIgnoresPixelBounds:(BOOL)bounds;	// 0x3029a925
+// converted property getter: - (BOOL)sizeIgnoresPixelBounds;	// 0x3029a935
+- (CGSize)sizeThatFits:(CGSize)fits;	// 0x3029a9f5
+- (void)windowMaxBoundsChanged;	// 0x3029ab49
+@end
+
+@interface BRPanelControl : BRControl {
+@private
+	BRControl *_background;	// 48 = 0x30
+	int _mode;	// 52 = 0x34
+	float _nonAxisAlignment;	// 56 = 0x38
+	float _verticalSpacing;	// 60 = 0x3c
+	float _verticalMargin;	// 64 = 0x40
+	float _horizontalSpacing;	// 68 = 0x44
+	float _horizontalMargin;	// 72 = 0x48
+}
+@property(retain) id backgroundControl;	// G=0x302baa39; S=0x302ba9c5; converted property
+@property(assign) float horizontalMargin;	// G=0x302bad8d; S=0x302bad51; converted property
+@property(assign) float horizontalSpacing;	// G=0x302bab69; S=0x302bab2d; converted property
+@property(assign) float nonAxisAlignment;	// G=0x302baa85; S=0x302baa49; converted property
+@property(assign) int panelMode;	// G=0x302ba9b5; S=0x302ba989; converted property
+@property(assign) float verticalMargin;	// G=0x302bab1d; S=0x302baae1; converted property
+@property(assign) float verticalSpacing;	// G=0x302baad1; S=0x302baa95; converted property
+- (id)init;	// 0x302ba92d
+- (CGRect)_marginedFrameForFrame:(CGRect)frame screenRes:(CGSize)res;	// 0x302bbb09
+- (void)_performFillRightToLeft:(id)left;	// 0x302bb759
+- (void)_performFillTopToBottom:(id)bottom;	// 0x302bb92d
+- (CGSize)_performFlowRightToLeft:(id)left inBounds:(CGSize)bounds setFrame:(BOOL)frame;	// 0x302bb2d9
+- (CGSize)_performFlowTopToBottom:(id)bottom inBounds:(CGSize)bounds setFrame:(BOOL)frame;	// 0x302bb4e5
+- (id)accessibilityLabel;	// 0x302bbbb9
+// converted property getter: - (id)backgroundControl;	// 0x302baa39
+// converted property getter: - (float)horizontalMargin;	// 0x302bad8d
+// converted property getter: - (float)horizontalSpacing;	// 0x302bab69
+- (void)layoutSubcontrols;	// 0x302bb075
+// converted property getter: - (float)nonAxisAlignment;	// 0x302baa85
+// converted property getter: - (int)panelMode;	// 0x302ba9b5
+- (CGPoint)positionForControlAtIndex:(unsigned)index preSize:(float *)size postSize:(float *)size3;	// 0x302bad9d
+// converted property setter: - (void)setBackgroundControl:(id)control;	// 0x302ba9c5
+// converted property setter: - (void)setHorizontalMargin:(float)margin;	// 0x302bad51
+// converted property setter: - (void)setHorizontalSpacing:(float)spacing;	// 0x302bab2d
+- (void)setHorizontalSpacingForPreferredWidth:(float)preferredWidth minimumSpacing:(float)spacing;	// 0x302bab79
+// converted property setter: - (void)setNonAxisAlignment:(float)alignment;	// 0x302baa49
+// converted property setter: - (void)setPanelMode:(int)mode;	// 0x302ba989
+// converted property setter: - (void)setVerticalMargin:(float)margin;	// 0x302baae1
+// converted property setter: - (void)setVerticalSpacing:(float)spacing;	// 0x302baa95
+- (CGSize)sizeThatFits:(CGSize)fits;	// 0x302bb19d
+// converted property getter: - (float)verticalMargin;	// 0x302bab1d
+// converted property getter: - (float)verticalSpacing;	// 0x302baad1
+@end
+
+@protocol ATVApplianceTopPanelControlDelegate <NSObject>
+- (void)selectedCategoryDidChangeForApplianceTopPanelControl:(id)selectedCategory;
+@end
+
+@interface ATVApplianceTopPanelControl : BRControl {
+@private
+	BRPanelControl *_panel;	// 48 = 0x30
+	BRControl *_bottomDivider;	// 52 = 0x34
+	BRImageControl *_glow;	// 56 = 0x38
+	BRControl *_leftFade;	// 60 = 0x3c
+	BRControl *_rightFade;	// 64 = 0x40
+	BOOL _rebuildPanel;	// 68 = 0x44
+	int _selectedIndex;	// 72 = 0x48
+	NSArray *_categories;	// 76 = 0x4c
+	id<ATVApplianceTopPanelControlDelegate> _delegate;	// 80 = 0x50
+	int _focusedIndex;	// 84 = 0x54
+	NSTimer *_updateSelectedIndexTimer;	// 88 = 0x58
+	BOOL _centerFocusLayout;	// 92 = 0x5c
+	double _timeSinceFocusMoved;	// 96 = 0x60
+}
+@property(assign, nonatomic) BOOL _centerFocusLayout;	// G=0x303e71a9; S=0x303e71b9; @synthesize
+@property(assign, nonatomic) int _focusedIndex;	// G=0x303e7169; S=0x303e7179; @synthesize
+@property(assign, nonatomic) double _timeSinceFocusMoved;	// G=0x303e71c9; S=0x303e71e1; @synthesize
+@property(assign, nonatomic, setter=_setUpdateSelectedIndexTimer:) NSTimer *_updateSelectedIndexTimer;	// G=0x303e7189; S=0x303e7199; @synthesize
+@property(retain, nonatomic) NSArray *categories;	// G=0x303e7125; S=0x303e7135; @synthesize=_categories
+@property(assign, nonatomic) id<ATVApplianceTopPanelControlDelegate> delegate;	// G=0x303e7159; S=0x303e6861; @synthesize=_delegate
+@property(retain, nonatomic) BRApplianceCategory *selectedCategory;	// G=0x303e66b9; S=0x303e6635; @dynamic
+- (id)init;	// 0x303e5f91
+- (void)_accessibilityUpdateSelection;	// 0x303e71f5
+// declared property getter: - (BOOL)_centerFocusLayout;	// 0x303e71a9
+// declared property getter: - (int)_focusedIndex;	// 0x303e7169
+- (int)_indexForCategoryWithIdentifier:(id)identifier;	// 0x303e78f1
+- (void)_selectedCategoryDidChange;	// 0x303e7345
+- (void)_setSelectedIndex:(int)index;	// 0x303e7321
+// declared property setter: - (void)_setUpdateSelectedIndexTimer:(id)timer;	// 0x303e7199
+- (void)_setUpdateSelectedIndexTimer:(NSTimer *)timer;	// 0x303e7269
+// declared property getter: - (double)_timeSinceFocusMoved;	// 0x303e71c9
+- (void)_updateRepositioning;	// 0x303e7385
+- (void)_updateSelectedIndex;	// 0x303e72c5
+// declared property getter: - (id)_updateSelectedIndexTimer;	// 0x303e7189
+- (BOOL)brEventAction:(id)action;	// 0x303e6e29
+// declared property getter: - (id)categories;	// 0x303e7125
+- (void)controlWasFocused;	// 0x303e6d25
+- (void)controlWasUnfocused;	// 0x303e6dd9
+- (void)dealloc;	// 0x303e6585
+// declared property getter: - (id)delegate;	// 0x303e7159
+- (void)layoutSubcontrols;	// 0x303e68d9
+// declared property getter: - (id)selectedCategory;	// 0x303e66b9
+// declared property setter: - (void)setCategories:(id)categories;	// 0x303e7135
+- (void)setCategories:(id)categories defaultCategory:(id)category;	// 0x303e6701
+// declared property setter: - (void)setDelegate:(id)delegate;	// 0x303e6861
+// declared property setter: - (void)setSelectedCategory:(id)category;	// 0x303e6635
+// declared property setter: - (void)set_centerFocusLayout:(BOOL)layout;	// 0x303e71b9
+// declared property setter: - (void)set_focusedIndex:(int)index;	// 0x303e7179
+// declared property setter: - (void)set_timeSinceFocusMoved:(double)moved;	// 0x303e71e1
+- (CGSize)sizeThatFits:(CGSize)fits;	// 0x303e6871
+@end
+
+@protocol ATVApplianceViewDelegate <NSObject>
+@optional
+- (BOOL)currentContentHasHeaderForApplianceView:(id)applianceView;
+@required
+- (id)topPanelCategoriesForApplianceView:(id)applianceView;
+@end
+
+
+
+@protocol ATVApplianceViewDelegate;
+
+__attribute__((visibility("hidden")))
+@interface ATVApplianceView : BRControl {
+@private
+	BRImageControl *_topPanelShadow;	// 48 = 0x30
+	BRControl *_container;	// 52 = 0x34
+	BRControl *_bottomFader;	// 56 = 0x38
+	BOOL _topPanelInPopUp;	// 60 = 0x3c
+	struct {
+		unsigned currentContentHasHeaderSelectorBit : 1;
+	} _delegateSelectorBits;	// 61 = 0x3d
+	id<ATVApplianceViewDelegate> _delegate;	// 64 = 0x40
+	ATVApplianceTopPanelControl *_topPanel;	// 68 = 0x44
+}
+@property(retain, nonatomic) BRControl *content;	// G=0x303e5105; S=0x303e5005; @dynamic
+@property(assign, nonatomic) id<ATVApplianceViewDelegate> delegate;	// G=0x303e576d; S=0x303e513d; @synthesize=_delegate
+@property(retain, nonatomic) ATVApplianceTopPanelControl *topPanel;	// G=0x303e577d; S=0x303e578d; @synthesize=_topPanel
+- (id)init;	// 0x303e4ae1
+- (id)_bottomFadeFilters;	// 0x303e57b1
+- (BOOL)_canShowTopPanelInPopUp;	// 0x303e5dd5
+- (BOOL)_currentContentHasHeader;	// 0x303e5a7d
+- (id)_findCursor:(id)cursor;	// 0x303e5ad9
+- (void)_updateCategories;	// 0x303e58c5
+- (void)_updateRepositioning;	// 0x303e5bc9
+- (BOOL)brEventAction:(id)action;	// 0x303e54bd
+// declared property getter: - (id)content;	// 0x303e5105
+- (void)controlWasActivated;	// 0x303e5219
+- (void)controlWasDeactivated;	// 0x303e5299
+- (void)dealloc;	// 0x303e4f7d
+// declared property getter: - (id)delegate;	// 0x303e576d
+- (void)layoutSubcontrols;	// 0x303e5301
+- (void)observeValueForKeyPath:(id)keyPath ofObject:(id)object change:(id)change context:(void *)context;	// 0x303e5745
+// declared property setter: - (void)setContent:(id)content;	// 0x303e5005
+// declared property setter: - (void)setDelegate:(id)delegate;	// 0x303e513d
+// declared property setter: - (void)setTopPanel:(id)panel;	// 0x303e578d
+// declared property getter: - (id)topPanel;	// 0x303e577d
+- (void)updateCategories;	// 0x303e5191
+- (void)updateViewLayout;	// 0x303e51a1
+@end
+
+@interface ATVApplianceUIHints : NSObject {
+@private
+	NSArray *_categoriesWithoutHeaders;	// 4 = 0x4
+}
+@property(retain, nonatomic) NSArray *categoriesWithoutHeaders;	// G=0x303e4aad; S=0x303e4abd; @synthesize=_categoriesWithoutHeaders
+// declared property getter: - (id)categoriesWithoutHeaders;	// 0x303e4aad
+- (void)dealloc;	// 0x303e4a61
+// declared property setter: - (void)setCategoriesWithoutHeaders:(id)headers;	// 0x303e4abd
+@end
+
+@protocol BRSubControllerHosting <NSObject>
+@optional
+- (BOOL)checkSubstitutions:(id *)substitutions;
+@required
+- (void)hostSubController:(id)controller;
+@end
+
+
+@interface ATVApplianceController : BRViewController <ATVApplianceViewDelegate, ATVApplianceTopPanelControlDelegate, BRSubControllerHosting> {
+	id<BRAppliance> _appliance;	// 88 = 0x58
+	ATVApplianceUIHints *_UIHints;	// 92 = 0x5c
+	BRController *_hostingSubController;	// 96 = 0x60
+}
+@property(retain, nonatomic) ATVApplianceUIHints *UIHints;	// G=0x303e4a1d; S=0x303e4a2d; @synthesize=_UIHints
+@property(readonly, assign, nonatomic) ATVApplianceView *_applianceView;	// G=0x303e477d; @dynamic
+@property(retain, nonatomic, setter=_setHostingSubController:) BRController *_hostingSubController;	// G=0x303e4a51; S=0x303e434d; @synthesize
+@property(retain, nonatomic) id<BRAppliance> appliance;	// G=0x303e49e9; S=0x303e49f9; @synthesize=_appliance
+- (id)initWithAppliance:(id)appliance;	// 0x303e4159
+// declared property getter: - (id)UIHints;	// 0x303e4a1d
+- (void)_applianceCategoriesUpdated:(id)updated;	// 0x303e49c1
+// declared property getter: - (id)_applianceView;	// 0x303e477d
+// declared property getter: - (id)_hostingSubController;	// 0x303e4a51
+// declared property setter: - (void)_setHostingSubController:(id)controller;	// 0x303e434d
+// declared property getter: - (id)appliance;	// 0x303e49e9
+- (BOOL)brEventAction:(id)action;	// 0x303e48f9
+- (BOOL)currentContentHasHeaderForApplianceView:(id)applianceView;	// 0x303e4659
+- (void)dealloc;	// 0x303e42a9
+- (void)hostSubController:(id)controller;	// 0x303e4739
+- (void)observeValueForKeyPath:(id)keyPath ofObject:(id)object change:(id)change context:(void *)context;	// 0x303e4435
+- (void)selectedCategoryDidChangeForApplianceTopPanelControl:(id)selectedCategory;	// 0x303e478d
+// declared property setter: - (void)setAppliance:(id)appliance;	// 0x303e49f9
+// declared property setter: - (void)setUIHints:(id)hints;	// 0x303e4a2d
+- (id)topPanelCategoriesForApplianceView:(id)applianceView;	// 0x303e45d1
+- (void)wasExhumed;	// 0x303e44a5
+@end
+
+

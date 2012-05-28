@@ -10,6 +10,7 @@
 #import "BLAppLegacyMerchant.h"
 #import "BLAppMerchantInfo.h"
 #import "BLAppLegacyCategoryController.h"
+#import "BLApplianceController.h"
 
 @implementation BLAppLegacyMerchant
 
@@ -32,6 +33,7 @@
 
 - (void) dealloc
 {
+	[appliance release];
     [super dealloc];
 }
 
@@ -58,12 +60,35 @@
 
 - (BRController *) rootController
 {
-    BLAppLegacyCategoryController *controller = [[[BLAppLegacyCategoryController alloc] init] autorelease];
-    [controller setListTitle: [self title]];
-    
-    BRBaseAppliance *legacyAppliance = [[[_legacyApplianceClass alloc] init] autorelease];
-    [controller setLegacyAppliance: legacyAppliance];
-    
+	id controller = nil;
+   BRBaseAppliance *legacyAppliance = [[[_legacyApplianceClass alloc] init] autorelease];
+
+	/*
+ 
+ its less than ideal to have to init the legacyAppliance to see if it has applianceInfo that is not nil, but not really sure what else to do
+ 
+ */
+	
+	
+	
+	if ([legacyAppliance applianceInfo] != nil)
+	{
+	//	NSLog(@"legacyApplianceinfo: %@", [legacyAppliance applianceInfo]);
+		[[BRApplianceManager singleton] _applianceDidReloadCategories:legacyAppliance];
+		controller = [[[BLApplianceController alloc] initWithAppliance:legacyAppliance] autorelease];
+	
+	} else {
+	
+		//NSLog(@"applianceInfo == nil");
+		(BLAppLegacyCategoryController*)controller = [[[BLAppLegacyCategoryController alloc] init] autorelease];
+		[controller setListTitle: [self title]];
+		BRBaseAppliance *legacyAppliance = [[[_legacyApplianceClass alloc] init] autorelease];
+		[controller setLegacyAppliance: legacyAppliance];
+		
+	}
+	
+	
+	
     return controller;
 }
 
@@ -95,5 +120,32 @@
 
 - (void) setPreferredOrder: (float) preferredOrder
 { [[self info] setPreferredOrder: preferredOrder]; }
+
+- (BRBaseAppliance*)applianceInstance
+{
+	if (!appliance)
+		appliance = [[[self legacyApplianceClass] alloc] init];
+	return appliance;
+}
+
+- (BOOL)showInTopRow
+{
+	return showInTopRow;
+}
+
+- (void)setShowInTopRow:(BOOL)show
+{
+	showInTopRow = show;
+}
+
+- (BOOL)presentedInTopRow
+{
+	return presentedInTopRow;
+}
+
+- (void)setPresentedInTopRow:(BOOL)presented
+{
+	presentedInTopRow = presented;
+}
 
 @end

@@ -1,3 +1,4 @@
+GO_EASY_ON_ME=1
 export THEOS_DEVICE_IP=apple-tv.local
 include theos/makefiles/common.mk
 
@@ -7,7 +8,7 @@ beigelist_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
 beigelist_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 beigelist_LDFLAGS += -undefined dynamic_lookup
 
-beigelist5_FILES = vip5.xm Classes/BLAppLegacyCategoryController.m Classes/BLAppLegacyMerchant.m Classes/BLAppManager.m
+beigelist5_FILES = vip5.xm Classes/BLAppLegacyCategoryController.m Classes/BLAppLegacyMerchant.m Classes/BLAppManager.m Classes/BLApplianceController.m
 beigelist5_FILES += Classes/BLAppMerchantInfo.m
 beigelist5_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
 beigelist5_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
