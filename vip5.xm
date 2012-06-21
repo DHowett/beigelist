@@ -1,4 +1,3 @@
-
 #import "Classes/BLAppManager.h"
 #import "Classes/BLAppLegacyMerchant.h"
 
@@ -60,7 +59,7 @@
 	{
 		for (BLAppLegacyMerchant* merchant in applianceMerchants)
 		{
-			if ([[appliances objectAtIndex:i] isKindOfClass:[merchant legacyApplianceClass]] && [merchant showInTopRow])
+		if ([appliances objectAtIndex:i] == [merchant applianceInstance] && [merchant showInTopRow])
 			{
 				BOOL show = [merchant presentedInTopRow];
 				if ([appliances count] > 5)
