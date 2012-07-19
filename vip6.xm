@@ -1,6 +1,22 @@
 #import "Classes/BLAppManager.h"
-#import "Classes/BLAppLegacyMerchant.h"
+//#import "Classes/BLAppLegacyMerchant.h"
 
+//tried doing the fraphooks thing so i could prevent all of this from loading till later. apparently its not hte code in here thats the problem, something in one of hte other classes
+//%group FrapHooks 
+
+/*
+
+this was because i couldnt get it to stop complaining about line 88 and maybe another one too, obviously seems wrong. but i dont think this has
+anything to do with why its crashing.
+
+
+*/
+
+@interface BLAppLegacyMerchant : NSObject 
+
+	- (BOOL)showInTopRow;
+	- (BOOL)presentedInTopRow;
+@end
 
 %hook ATVMerchantCoordinator
 
@@ -8,12 +24,13 @@
 
 - (id)allMerchants
 {
+	%log;
 	NSArray *merchants = %orig;
     	NSMutableArray *applianceMerchants = [NSMutableArray arrayWithArray:[[BLAppManager sharedAppManager] appliances]];
 	
 	for (int i = [applianceMerchants count] - 1; i >= 0; i--)
 	{
-		BLAppLegacyMerchant* merchant = [applianceMerchants objectAtIndex:i];
+		id merchant = [applianceMerchants objectAtIndex:i];
 		if ([merchant presentedInTopRow])
 			[applianceMerchants removeObjectAtIndex:i];
 	}
@@ -30,16 +47,19 @@
 
 %hook BRApplianceManager
 
+@class BLAppManager;
+
 - (void)loadAppliances
 {
+	%log;
 	%orig;
 	
 	// this code implicitly adds appliance to BRApplianceManager
 	NSArray *applianceMerchants = [[BLAppManager sharedAppManager] appliances];
-	for (BLAppLegacyMerchant* merchant in applianceMerchants)
+	for (id merchant in applianceMerchants)
 	{
 		if ([merchant showInTopRow])
-			[[BRApplianceManager singleton] _applianceDidReloadCategories:[merchant applianceInstance]];
+			[[NSClassFromString(@"BRApplianceManager") singleton] _applianceDidReloadCategories:[merchant applianceInstance]];
 	}
 }
 
@@ -48,8 +68,12 @@
 
 %hook ATVMainMenuController
 
+@class BLAppManager;
+@class BLAppLegacyMerchant;
+
 - (id)appliances
 {
+	%log;
 	NSArray* orig = %orig;
 	NSMutableArray* appliances = [NSMutableArray arrayWithArray:orig];
 	NSArray *applianceMerchants = [[BLAppManager sharedAppManager] appliances];
@@ -57,11 +81,11 @@
 	
 	for (int i = [appliances count] - 1; i >= 0; i--)
 	{
-		for (BLAppLegacyMerchant* merchant in applianceMerchants)
+		for (BLAppLegacyMerchant *merchant in applianceMerchants)
 		{
 		if ([appliances objectAtIndex:i] == [merchant applianceInstance] && [merchant showInTopRow])
 			{
-				BOOL show = [merchant presentedInTopRow];
+				BOOL show = (BOOL)[merchant presentedInTopRow];
 				if ([appliances count] > 5)
 				{
 					[appliances removeObjectAtIndex:i];
@@ -90,15 +114,18 @@
 	return appliances;
 }
 
+#define BRI NSClassFromString(@"BRImage")
+
 - (id)_imageForAppliance:(id)appliance
 {
+	%log;
 	NSArray *applianceMerchants = [[BLAppManager sharedAppManager] appliances];
-	for (BLAppLegacyMerchant* merchant in applianceMerchants)
+	for (id merchant in applianceMerchants)
 	{
 		if ([appliance isKindOfClass:[merchant legacyApplianceClass]] && [merchant showInTopRow])
 		{
 			NSBundle* bundle = [NSBundle bundleForClass:[appliance class]];
-			BRImage* img = [BRImage imageWithPath:[bundle pathForResource:@"TopRowIcon" ofType:@"png"]];
+			id img = [BRI imageWithPath:[bundle pathForResource:@"TopRowIcon" ofType:@"png"]];
 			return img;
 		}
 	}
@@ -108,12 +135,24 @@
 
 %end
 
+// %end
+// 
+// %hook LTAppDelegate
+// 
+// - (void)applicationDidFinishLaunching:(id)application //makes no difference :(
+// {
+// 	%log;
+// 	%orig;
+// 		%init(FrapHooks);
+// }
+// 
+
 
 %class ATVMerchantCoordinator
 %ctor {
-	NSLog( @"beigelist5 (beigelist5-%s) loaded.", VERSION);
+	NSLog( @"beigelist6 (beigelist6-%s) loaded.", VERSION);
 	%init;
 	
-	[[NSClassFromString(@"BLAppManager") sharedAppManager] loadAppliances];
+//	[[NSClassFromString(@"BLAppManager") sharedAppManager] loadAppliances];
 
 }

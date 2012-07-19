@@ -126,8 +126,15 @@
 
 - (BRBaseAppliance*)applianceInstance
 {
-	if (!appliance)
-		appliance = [[[self legacyApplianceClass] alloc] init];
+	@try {
+		if (!appliance)
+			appliance = [[[self legacyApplianceClass] alloc] init];
+	}
+	@catch (NSException *exception) {
+		NSLog(@"%s Failed to create appliance for class %@", __FUNCTION__, [self legacyApplianceClass]);
+		NSLog(@"%s Exception %@", __FUNCTION__, exception);
+	}
+	
 	return appliance;
 }
 
