@@ -12,7 +12,7 @@
 %subclass BLAppLegacyCategoryController: BRMenuController
 
 
-@implementation BLAppLegacyCategoryController
+//@implementation BLAppLegacyCategoryController
 
 	static char const * const menuItemKey = "MenuItems";
 	static char const * const legacyApplianceKey = "LegacyAppliance";
@@ -49,13 +49,8 @@
 
 */
 
-%new
-- (id)menuItems {
-    return objc_getAssociatedObject(self, menuItemKey);}
-%new
-- (void)setMenuItems:(id)newMenuItems {
-    objc_setAssociatedObject(self, menuItemKey, newMenuItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
+%new - (id)menuItems { return objc_getAssociatedObject(self, menuItemKey); }
+%new - (void)setMenuItems:(id)newMenuItems { objc_setAssociatedObject(self, menuItemKey, newMenuItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC); }
 
 #pragma mark -
 #pragma mark Class Methods
@@ -66,9 +61,7 @@
 #pragma mark
 
 #define BRMI NSClassFromString(@"BRMenuItem")
-%new
-- (void) _generateCategoryMenuItems
-{
+%new - (void) _generateCategoryMenuItems {
     id items = [self menuItems];
 	id legacyApp = [self legacyAppliance];
 	
@@ -90,11 +83,9 @@
 #pragma mark -
 #pragma mark Public Methods
 #pragma mark
-%new
-- (id) legacyAppliance
+%new - (id) legacyAppliance
 { return objc_getAssociatedObject(self, legacyApplianceKey ); }
-%new
-- (void) setLegacyAppliance: (id) legacyAppliance
+%new - (void) setLegacyAppliance: (id) legacyAppliance
 {
    objc_setAssociatedObject(self, legacyApplianceKey, legacyAppliance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
@@ -104,21 +95,12 @@
 #pragma mark -
 #pragma mark BRMenuListItemProvider Methods
 #pragma mark
-%new
-- (long)itemCount
+%new - (long)itemCount
 { return [[self menuItems] count]; }
-%new
-- (float)heightForRow:(long)rowIndex
-{ return 0; }
-%new
-- (BOOL)rowSelectable:(long)rowIndex
-{ return YES; }
-%new
-- (id)titleForRow:(long)rowIndex
-{ return nil; }
-%new
-- (id)itemForRow:(long)rowIndex
-{ return [[self menuItems] objectAtIndex: rowIndex]; }
+%new - (float)heightForRow:(long)rowIndex { return 0; }
+%new - (BOOL)rowSelectable:(long)rowIndex { return YES; }
+%new - (id)titleForRow:(long)rowIndex { return nil; }
+%new - (id)itemForRow:(long)rowIndex { return [[self menuItems] objectAtIndex: rowIndex]; }
 
 #pragma mark -
 #pragma mark Super Overrides
@@ -133,14 +115,12 @@
 // {
 //     [super controlWasDeactivated];
 // }
-%new
-- (void)itemSelected:(long)rowIndex
-{
+%new - (void)itemSelected:(long)rowIndex {
     id itemForRow = [[self menuItems] objectAtIndex: rowIndex];
     id controller = [[self legacyAppliance] controllerForIdentifier: [itemForRow identifier] args: nil];
     [[self stack] pushController: controller];
 }
 
-@end
+//@end
 
 %end

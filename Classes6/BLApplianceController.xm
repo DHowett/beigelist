@@ -6,14 +6,14 @@
 //  Copyright 2012 nito, LLC. All rights reserved.
 //
 
-#import "Classes6/BLApplianceController.h"
+//#import "Classes6/BLApplianceController.h"
 
 #define ATVMMC NSClassFromString(@"ATVMainMenuController")
 #define BRAPPM NSClassFromString(@"BRApplianceManager")
 
 %subclass BLApplianceController: ATVApplianceController
 
-@implementation BLApplianceController
+//@implementation BLApplianceController
 
 /*
  
@@ -98,6 +98,6 @@
 //	
 //}
 
-@end
+//@end
 
 %end

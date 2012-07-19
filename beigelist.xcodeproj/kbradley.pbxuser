@@ -344,6 +344,24 @@
 			898F12DA15B8C1060014433F /* PBXBookmark */ = 898F12DA15B8C1060014433F /* PBXBookmark */;
 			898F12DB15B8C10A0014433F /* PBXTextBookmark */ = 898F12DB15B8C10A0014433F /* PBXTextBookmark */;
 			898F12DE15B8C10A0014433F /* PBXTextBookmark */ = 898F12DE15B8C10A0014433F /* PBXTextBookmark */;
+			898F12E215B8C3130014433F /* PBXTextBookmark */ = 898F12E215B8C3130014433F /* PBXTextBookmark */;
+			898F12E315B8C3130014433F /* PBXTextBookmark */ = 898F12E315B8C3130014433F /* PBXTextBookmark */;
+			898F12E415B8C3130014433F /* PBXTextBookmark */ = 898F12E415B8C3130014433F /* PBXTextBookmark */;
+			898F12E615B8C31B0014433F /* PBXBookmark */ = 898F12E615B8C31B0014433F /* PBXBookmark */;
+			898F12E715B8C3220014433F /* PBXTextBookmark */ = 898F12E715B8C3220014433F /* PBXTextBookmark */;
+			898F12EA15B8C3220014433F /* PBXTextBookmark */ = 898F12EA15B8C3220014433F /* PBXTextBookmark */;
+			898F12F015B8C44A0014433F /* PBXTextBookmark */ = 898F12F015B8C44A0014433F /* PBXTextBookmark */;
+			898F12F115B8C44A0014433F /* PBXTextBookmark */ = 898F12F115B8C44A0014433F /* PBXTextBookmark */;
+			898F12F215B8C44A0014433F /* PBXTextBookmark */ = 898F12F215B8C44A0014433F /* PBXTextBookmark */;
+			898F12F615B8C4C80014433F /* PBXTextBookmark */ = 898F12F615B8C4C80014433F /* PBXTextBookmark */;
+			898F12F715B8C4C80014433F /* PBXTextBookmark */ = 898F12F715B8C4C80014433F /* PBXTextBookmark */;
+			898F12FA15B8C5130014433F /* PBXTextBookmark */ = 898F12FA15B8C5130014433F /* PBXTextBookmark */;
+			898F12FB15B8C5130014433F /* PBXTextBookmark */ = 898F12FB15B8C5130014433F /* PBXTextBookmark */;
+			898F12FD15B8C5470014433F /* PBXTextBookmark */ = 898F12FD15B8C5470014433F /* PBXTextBookmark */;
+			898F12FE15B8C5470014433F /* PBXTextBookmark */ = 898F12FE15B8C5470014433F /* PBXTextBookmark */;
+			898F130115B8C5470014433F /* PBXTextBookmark */ = 898F130115B8C5470014433F /* PBXTextBookmark */;
+			898F130215B8C5470014433F /* PBXTextBookmark */ = 898F130215B8C5470014433F /* PBXTextBookmark */;
+			898F130315B8C5470014433F /* PBXTextBookmark */ = 898F130315B8C5470014433F /* PBXTextBookmark */;
 		};
 		sourceControlManager = 8957AACB1522929600B3CDF2 /* Source Control */;
 		userBuildSettings = {
@@ -373,8 +391,8 @@
 	8957AAD5152292E400B3CDF2 /* Makefile */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1328, 750}}";
-			sepNavSelRange = "{122, 0}";
-			sepNavVisRange = "{0, 2404}";
+			sepNavSelRange = "{1921, 0}";
+			sepNavVisRange = "{0, 2142}";
 			sepNavWindowFrame = "{{11, 0}, {1387, 878}}";
 		};
 	};
@@ -664,9 +682,9 @@
 	};
 	898F105015B7CA9B0014433F /* BLAppLegacyCategoryController.xm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {775, 1976}}";
-			sepNavSelRange = "{3214, 0}";
-			sepNavVisRange = "{1073, 202}";
+			sepNavIntBoundsRect = "{{0, 0}, {992, 1924}}";
+			sepNavSelRange = "{3211, 0}";
+			sepNavVisRange = "{967, 541}";
 			sepNavWindowFrame = "{{15, 0}, {1374, 878}}";
 		};
 	};
@@ -680,9 +698,9 @@
 	};
 	898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {992, 2301}}";
-			sepNavSelRange = "{4673, 0}";
-			sepNavVisRange = "{1731, 636}";
+			sepNavIntBoundsRect = "{{0, 0}, {992, 2379}}";
+			sepNavSelRange = "{4674, 0}";
+			sepNavVisRange = "{1730, 636}";
 			sepNavWindowFrame = "{{15, 0}, {1374, 878}}";
 		};
 	};
@@ -696,9 +714,9 @@
 	};
 	898F105415B7CA9B0014433F /* BLApplianceController.xm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {775, 1326}}";
-			sepNavSelRange = "{2940, 0}";
-			sepNavVisRange = "{1193, 275}";
+			sepNavIntBoundsRect = "{{0, 0}, {985, 1300}}";
+			sepNavSelRange = "{2946, 0}";
+			sepNavVisRange = "{946, 747}";
 			sepNavWindowFrame = "{{15, 0}, {1374, 878}}";
 		};
 	};
@@ -712,9 +730,9 @@
 	};
 	898F105615B7CA9B0014433F /* BLAppManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1315, 2054}}";
-			sepNavSelRange = "{2221, 0}";
-			sepNavVisRange = "{896, 2020}";
+			sepNavIntBoundsRect = "{{0, 0}, {1315, 2262}}";
+			sepNavSelRange = "{333, 19}";
+			sepNavVisRange = "{0, 1069}";
 			sepNavWindowFrame = "{{24, 0}, {1374, 878}}";
 		};
 	};
@@ -1178,7 +1196,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 19";
 		rLen = 0;
-		rLoc = 925;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 2147;
 		vrLoc = 0;
@@ -1412,7 +1430,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 19";
 		rLen = 0;
-		rLoc = 958;
+		rLoc = 947;
 		rType = 0;
 		vrLen = 2147;
 		vrLoc = 0;
@@ -1470,7 +1488,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 19";
 		rLen = 0;
-		rLoc = 958;
+		rLoc = 947;
 		rType = 0;
 		vrLen = 2147;
 		vrLoc = 0;
@@ -1624,7 +1642,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 18";
 		rLen = 0;
-		rLoc = 777;
+		rLoc = 766;
 		rType = 0;
 		vrLen = 2154;
 		vrLoc = 0;
@@ -1848,7 +1866,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 20";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 2154;
 		vrLoc = 0;
@@ -1993,7 +2011,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 20";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 282;
 		vrLoc = 750;
@@ -2003,7 +2021,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 22";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 284;
 		vrLoc = 778;
@@ -2013,7 +2031,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 22";
 		rLen = 0;
-		rLoc = 959;
+		rLoc = 947;
 		rType = 0;
 		vrLen = 2184;
 		vrLoc = 0;
@@ -2027,7 +2045,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 21";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 282;
 		vrLoc = 751;
@@ -2037,7 +2055,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 20";
 		rLen = 0;
-		rLoc = 877;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 2155;
 		vrLoc = 0;
@@ -2047,7 +2065,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 19";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 282;
 		vrLoc = 749;
@@ -2234,7 +2252,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2393;
 		vrLoc = 0;
@@ -2254,7 +2272,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2404;
 		vrLoc = 0;
@@ -2288,7 +2306,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2393;
 		vrLoc = 0;
@@ -2308,7 +2326,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2404;
 		vrLoc = 0;
@@ -2356,7 +2374,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2393;
 		vrLoc = 0;
@@ -2909,7 +2927,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2404;
 		vrLoc = 0;
@@ -3063,7 +3081,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2393;
 		vrLoc = 0;
@@ -3083,7 +3101,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2404;
 		vrLoc = 0;
@@ -3217,7 +3235,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 21";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 354;
 		vrLoc = 737;
@@ -3227,7 +3245,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2393;
 		vrLoc = 0;
@@ -3237,7 +3255,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 21";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 330;
 		vrLoc = 700;
@@ -3247,7 +3265,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2404;
 		vrLoc = 0;
@@ -3257,7 +3275,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 21";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 330;
 		vrLoc = 700;
@@ -3321,7 +3339,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2393;
 		vrLoc = 0;
@@ -3341,7 +3359,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2404;
 		vrLoc = 0;
@@ -3489,7 +3507,7 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2393;
 		vrLoc = 0;
@@ -3563,9 +3581,180 @@
 		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
 		name = "Makefile: 5";
 		rLen = 0;
-		rLoc = 122;
+		rLoc = 111;
 		rType = 0;
 		vrLen = 2404;
+		vrLoc = 0;
+	};
+	898F12E215B8C3130014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F11B015B7F9080014433F /* vip6.xm */;
+		name = "vip6.xm: 43";
+		rLen = 0;
+		rLoc = 1081;
+		rType = 0;
+		vrLen = 546;
+		vrLoc = 0;
+	};
+	898F12E315B8C3130014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */;
+		name = "BLAppLegacyMerchant.xm: 186";
+		rLen = 0;
+		rLoc = 4673;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 1731;
+	};
+	898F12E415B8C3130014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */;
+		name = "BLAppLegacyMerchant.xm: 186";
+		rLen = 0;
+		rLoc = 4679;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 1735;
+	};
+	898F12E615B8C31B0014433F /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
+	};
+	898F12E715B8C3220014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */;
+		name = "BLAppLegacyMerchant.xm: 186";
+		rLen = 0;
+		rLoc = 4679;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 1735;
+	};
+	898F12EA15B8C3220014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8957AAD5152292E400B3CDF2 /* Makefile */;
+		name = "Makefile: 5";
+		rLen = 0;
+		rLoc = 111;
+		rType = 0;
+		vrLen = 2393;
+		vrLoc = 0;
+	};
+	898F12F015B8C44A0014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F11B015B7F9080014433F /* vip6.xm */;
+		name = "vip6.xm: 43";
+		rLen = 0;
+		rLoc = 1081;
+		rType = 0;
+		vrLen = 546;
+		vrLoc = 0;
+	};
+	898F12F115B8C44A0014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */;
+		name = "BLAppLegacyMerchant.xm: 186";
+		rLen = 0;
+		rLoc = 4679;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 1735;
+	};
+	898F12F215B8C44A0014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */;
+		name = "BLAppLegacyMerchant.xm: 186";
+		rLen = 0;
+		rLoc = 4679;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 1735;
+	};
+	898F12F615B8C4C80014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */;
+		name = "BLAppLegacyMerchant.xm: 186";
+		rLen = 0;
+		rLoc = 4679;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 1735;
+	};
+	898F12F715B8C4C80014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105015B7CA9B0014433F /* BLAppLegacyCategoryController.xm */;
+		name = "BLAppLegacyCategoryController.xm: 126";
+		rLen = 0;
+		rLoc = 3211;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 967;
+	};
+	898F12FA15B8C5130014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105015B7CA9B0014433F /* BLAppLegacyCategoryController.xm */;
+		name = "BLAppLegacyCategoryController.xm: 126";
+		rLen = 0;
+		rLoc = 3211;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 967;
+	};
+	898F12FB15B8C5130014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */;
+		name = "BLAppLegacyMerchant.xm: 167";
+		rLen = 0;
+		rLoc = 4674;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 1730;
+	};
+	898F12FD15B8C5470014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */;
+		name = "BLAppLegacyMerchant.xm: 167";
+		rLen = 0;
+		rLoc = 4674;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 1730;
+	};
+	898F12FE15B8C5470014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 103";
+		rLen = 0;
+		rLoc = 2946;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 946;
+	};
+	898F130115B8C5470014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105515B7CA9B0014433F /* BLAppManager.h */;
+		name = "BLAppManager.h: 25";
+		rLen = 0;
+		rLoc = 620;
+		rType = 0;
+		vrLen = 732;
+		vrLoc = 0;
+	};
+	898F130215B8C5470014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105615B7CA9B0014433F /* BLAppManager.m */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	898F130315B8C5470014433F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105615B7CA9B0014433F /* BLAppManager.m */;
+		name = "BLAppManager.m: 13";
+		rLen = 19;
+		rLoc = 333;
+		rType = 0;
+		vrLen = 1069;
 		vrLoc = 0;
 	};
 	8D57630D048677EA00EA77CD /* beigelist */ = {

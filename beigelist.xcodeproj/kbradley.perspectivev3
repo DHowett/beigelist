@@ -210,24 +210,25 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>898F12DC15B8C10A0014433F</string>
+				<string>898F12FF15B8C5470014433F</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>Makefile</string>
+				<string>BLAppManager.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>898F12DD15B8C10A0014433F</string>
+						<string>898F130015B8C5470014433F</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>Makefile</string>
+						<string>BLAppManager.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>898F12DE15B8C10A0014433F</string>
+						<string>898F130315B8C5470014433F</string>
 						<key>history</key>
 						<array>
-							<string>898F12DA15B8C1060014433F</string>
+							<string>898F130115B8C5470014433F</string>
+							<string>898F130215B8C5470014433F</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -239,11 +240,11 @@
 			<key>Geometry</key>
 			<dict>
 				<key>Frame</key>
-				<string>{{0, 20}, {1387, 781}}</string>
+				<string>{{0, 20}, {1374, 781}}</string>
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>11 56 1387 822 0 0 1440 878 </string>
+				<string>15 56 1374 822 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -323,8 +324,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>22</integer>
-									<integer>15</integer>
+									<integer>10</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -362,7 +363,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>8957AAC51522929600B3CDF2</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BLAppLegacyMerchant.xm</string>
+								<string>BLApplianceController.xm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -370,11 +371,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>8957AAC61522929600B3CDF2</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BLAppLegacyMerchant.xm</string>
+										<string>BLApplianceController.xm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>898F12DB15B8C10A0014433F</string>
+										<string>898F12FE15B8C5470014433F</string>
 										<key>history</key>
 										<array>
 											<string>8957AFC51522F40800B3CDF2</string>
@@ -393,14 +394,14 @@
 											<string>898F124415B80FDB0014433F</string>
 											<string>898F124515B80FDB0014433F</string>
 											<string>898F126115B877130014433F</string>
-											<string>898F128F15B878C40014433F</string>
 											<string>898F129915B879480014433F</string>
 											<string>898F12B915B8B7E10014433F</string>
-											<string>898F12BA15B8B7E10014433F</string>
-											<string>898F12D515B8C0DD0014433F</string>
 											<string>898F12D615B8C0DD0014433F</string>
 											<string>898F12D715B8C0DD0014433F</string>
-											<string>898F12D815B8C0DD0014433F</string>
+											<string>898F12F015B8C44A0014433F</string>
+											<string>898F12FA15B8C5130014433F</string>
+											<string>898F12FD15B8C5470014433F</string>
+											<string>898F128F15B878C40014433F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -440,8 +441,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {836, 295}}</string>
-										<key>RubberWindowFrame</key>
-										<string>33 136 1148 718 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -457,7 +456,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {836, 503}}</string>
+										<string>{{10, 27}, {836, 295}}</string>
+										<key>RubberWindowFrame</key>
+										<string>33 136 1148 718 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -698,7 +699,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>/Users/kbradley/Projects/ATV2/beigelist/beigelist.xcodeproj</string>
-		<string>898F12DC15B8C10A0014433F</string>
+		<string>898F12FF15B8C5470014433F</string>
 	</array>
 	<key>WindowString</key>
 	<string>33 136 1148 718 0 0 1440 878 </string>

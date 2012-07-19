@@ -1,5 +1,5 @@
 #import "AppleTV.h"
-#import "Classes6/BLAppLegacyMerchant.h"
+//#import "Classes6/BLAppLegacyMerchant.h"
 
 %subclass BLAppLegacyMerchant: ATVMerchant
 
@@ -10,7 +10,7 @@
 
 
 
-@implementation BLAppLegacyMerchant
+//@implementation BLAppLegacyMerchant
 //@dynamic legacyApplianceClass, appliance, showInTopRow, presentedInTopRow;
 
 
@@ -47,9 +47,7 @@
 #pragma mark -
 #pragma mark Class Methods
 #pragma mark
-%new
-+ (id) merchant
-{ return [[[BLAppLegacyMerchant alloc] init] autorelease]; }
+%new + (id) merchant { return [[[BLAppLegacyMerchant alloc] init] autorelease]; }
 
 
 #pragma mark -
@@ -59,15 +57,13 @@
 #pragma mark -
 #pragma mark Public Methods
 #pragma mark
-%new(v@:@)
--(void)setLegacyApplianceClassString:(NSString *)classString
+%new -(void)setLegacyApplianceClassString:(NSString *)classString
 { objc_setAssociatedObject(self, legacyApplianceKey, classString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
-%new
-- (Class) legacyApplianceClass
+%new - (Class) legacyApplianceClass
 {  return NSClassFromString(objc_getAssociatedObject(self, legacyApplianceKey)); }
-%new
-- (void) setLegacyApplianceClass: (Class) legacyApplianceClass
+
+%new - (void) setLegacyApplianceClass: (Class) legacyApplianceClass
 
 	{ 	NSLog(@"in here?");
 	 objc_setAssociatedObject(self, legacyApplianceKey, legacyApplianceClass, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
@@ -114,39 +110,28 @@
 // {
 // 	return [super info];
 // }
-%new
-- (NSString *) title
+%new - (NSString *) title
 { return [[self info] menuTitle]; }
-%new
-- (void) setTitle: (NSString *) title
+%new - (void) setTitle: (NSString *) title
 { [[self info] setMenuTitle: title]; }
-%new
-- (NSString *) identifier
+%new - (NSString *) identifier
 { return [[self info] merchantID]; }
-%new
-- (void) setIdentifier: (NSString *) identifier
+%new - (void) setIdentifier: (NSString *) identifier
 { [[self info] setMerchantID: identifier]; }
-%new
-- (NSURL *) iconURL
+%new - (NSURL *) iconURL
 { return [[self info] menuIconURL]; }
-%new
-- (void) setIconURL: (NSURL *) iconURL
+%new - (void) setIconURL: (NSURL *) iconURL
 { [[self info] setMenuIconURL: iconURL]; }
-%new
-- (float) preferredOrder
+%new - (float) preferredOrder
 { return [[self info] preferredOrder]; }
-%new
-- (void) setPreferredOrder: (float) preferredOrder
+%new - (void) setPreferredOrder: (float) preferredOrder
 { [[self info] setPreferredOrder: preferredOrder]; }
-%new
-- (id) appliance
+%new - (id) appliance
 {  return objc_getAssociatedObject(self, applianceKey); }
-%new
-- (void) setAppliance: (id) theAppliance
+%new - (void) setAppliance: (id) theAppliance
 {  objc_setAssociatedObject(self, applianceKey, theAppliance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
-%new
-- (id)applianceInstance
+%new - (id)applianceInstance
 {
 	id myAppliance = nil;
 	@try {
@@ -165,22 +150,18 @@
 	
 	return myAppliance;
 }
-%new
-- (BOOL)showInTopRow
+%new - (BOOL)showInTopRow
 {  return [objc_getAssociatedObject(self, showInTopRowKey) boolValue]; }
-%new
-- (void)setShowInTopRow:(BOOL)show
+%new - (void)setShowInTopRow:(BOOL)show
 { objc_setAssociatedObject(self, showInTopRowKey, [NSNumber numberWithBool:show], OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
-%new
-- (BOOL)presentedInTopRow
+%new - (BOOL)presentedInTopRow
 { return [objc_getAssociatedObject(self, presentedInTopRowKey) boolValue]; }
-%new
-- (void)setPresentedInTopRow:(BOOL)presented
+%new - (void)setPresentedInTopRow:(BOOL)presented
 { objc_setAssociatedObject(self, presentedInTopRowKey, [NSNumber numberWithBool:presented], OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
 
 
-@end
+//@end
 
 %end

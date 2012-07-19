@@ -2,7 +2,7 @@ GO_EASY_ON_ME=1
 export THEOS_DEVICE_IP=apple-tv.local
 include theos/makefiles/common.mk
 
-TWEAK_NAME = beigelist beigelist5 beigelist6 0bacon
+TWEAK_NAME = beigelist beigelist6 0bacon
 beigelist_FILES = vip2.xm 
 beigelist_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
 beigelist_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
@@ -16,9 +16,7 @@ beigelist5_LDFLAGS += -undefined dynamic_lookup
 
 beigelist6_FILES =  vip6.xm Classes6/BLAppLegacyCategoryController.xm Classes6/BLAppManager.m Classes6/BLApplianceController.xm
 beigelist6_FILES += Classes6/BLAppMerchantInfo.xm Classes6/BLAppLegacyMerchant.xm
-beigelist6_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
-beigelist6_LDFLAGS += -weak_library $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
-beigelist6_LDFLAGS += -undefined dynamic_lookup
+beigelist6_LDFLAGS = -undefined dynamic_lookup
 
 0bacon_FILES = bacon.xm
 0bacon_LDFLAGS = -weak_library $(THEOS_OBJ_DIR)/BackRow.stub.dylib
@@ -37,7 +35,6 @@ $(THEOS_OBJ_DIR)/%.stub.dylib:
 
 $(THEOS_OBJ_DIR)/beigelist.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 $(THEOS_OBJ_DIR)/beigelist5.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
-$(THEOS_OBJ_DIR)/beigelist6.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 $(THEOS_OBJ_DIR)/0bacon.dylib: $(THEOS_OBJ_DIR)/BackRow.stub.dylib $(THEOS_OBJ_DIR)/AppleTV.stub.dylib
 
 after-stage::

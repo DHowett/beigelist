@@ -12,7 +12,7 @@
 %subclass BLAppMerchantInfo: BRMerchantInfo
 
 
-@implementation BLAppMerchantInfo
+//@implementation BLAppMerchantInfo
 
 	static char const * const menuTitleKey = "menuTitle";
 	static char const * const menuIconKey = "menuIconURL";
@@ -52,8 +52,7 @@
 #pragma mark -
 #pragma mark Class Methods
 #pragma mark
-%new
-+ (id) merchantInfo
+%new + (id) merchantInfo
 { return [[[BLAppMerchantInfo alloc] init] autorelease]; }
 
 #pragma mark -
@@ -64,38 +63,30 @@
 #pragma mark Public Methods
 #pragma mark
 
-%new
-- (NSString *) menuTitle
+%new - (NSString *) menuTitle
 { return objc_getAssociatedObject(self, menuTitleKey); }
-%new
-- (void) setMenuTitle: (NSString *) menuTitle
+%new - (void) setMenuTitle: (NSString *) menuTitle
 {
      objc_setAssociatedObject(self, menuTitleKey, menuTitle, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-%new
-- (NSURL *) menuIconURL
+%new - (NSURL *) menuIconURL
 { return objc_getAssociatedObject(self, menuIconKey); }
-%new
-- (void) setMenuIconURL: (NSURL *) menuIconURL
+%new - (void) setMenuIconURL: (NSURL *) menuIconURL
 {
     objc_setAssociatedObject(self, menuIconKey, menuIconURL, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-%new
-- (NSString *) merchantID
+%new - (NSString *) merchantID
 {  return objc_getAssociatedObject(self, merchantIDKey); }
 
-%new
-- (void) setMerchantID: (NSString *) merchantID
+%new - (void) setMerchantID: (NSString *) merchantID
 {
      objc_setAssociatedObject(self, merchantIDKey, merchantID, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-%new
-- (float) preferredOrder
+%new - (float) preferredOrder
 { return [objc_getAssociatedObject(self, preferredOrderKey) floatValue]; }
-%new
-- (void) setPreferredOrder: (float) preferredOrder
+%new - (void) setPreferredOrder: (float) preferredOrder
 { objc_setAssociatedObject(self, preferredOrderKey, [NSNumber numberWithFloat:preferredOrder], OBJC_ASSOCIATION_RETAIN_NONATOMIC); }
 
-@end
+//@end
 
 %end
