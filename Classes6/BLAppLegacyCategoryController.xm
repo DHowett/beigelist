@@ -7,7 +7,7 @@
 //  Copyright 2012 What a Nutbar Software. All rights reserved.
 //
 
-//#import "BLAppLegacyCategoryController.h"
+//#import "Classes6/BLAppLegacyCategoryController.h"
 
 %subclass BLAppLegacyCategoryController: BRMenuController
 
@@ -26,15 +26,15 @@
 
 - (id) init
 {
-  //  if((self = [super init]))
-    //{
+   if((self = %orig))
+    {
         NSMutableArray *theArray = [[NSMutableArray alloc] init];
         [self setMenuItems:theArray];
        // _legacyAppliance = nil;
         
         [self setUseCenteredLayout: YES];
         [[self list] setDatasource: self];
-    //}
+    }
     return self;
 }
 
@@ -49,10 +49,10 @@
 
 */
 
+%new
 - (id)menuItems {
-    return objc_getAssociatedObject(self, menuItemKey);
-}
-
+    return objc_getAssociatedObject(self, menuItemKey);}
+%new
 - (void)setMenuItems:(id)newMenuItems {
     objc_setAssociatedObject(self, menuItemKey, newMenuItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -66,7 +66,7 @@
 #pragma mark
 
 #define BRMI NSClassFromString(@"BRMenuItem")
-
+%new
 - (void) _generateCategoryMenuItems
 {
     id items = [self menuItems];
@@ -90,10 +90,10 @@
 #pragma mark -
 #pragma mark Public Methods
 #pragma mark
-
+%new
 - (id) legacyAppliance
 { return objc_getAssociatedObject(self, legacyApplianceKey ); }
-
+%new
 - (void) setLegacyAppliance: (id) legacyAppliance
 {
    objc_setAssociatedObject(self, legacyApplianceKey, legacyAppliance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -104,19 +104,19 @@
 #pragma mark -
 #pragma mark BRMenuListItemProvider Methods
 #pragma mark
-
+%new
 - (long)itemCount
 { return [[self menuItems] count]; }
-
+%new
 - (float)heightForRow:(long)rowIndex
 { return 0; }
-
+%new
 - (BOOL)rowSelectable:(long)rowIndex
 { return YES; }
-
+%new
 - (id)titleForRow:(long)rowIndex
 { return nil; }
-
+%new
 - (id)itemForRow:(long)rowIndex
 { return [[self menuItems] objectAtIndex: rowIndex]; }
 
@@ -133,7 +133,7 @@
 // {
 //     [super controlWasDeactivated];
 // }
-
+%new
 - (void)itemSelected:(long)rowIndex
 {
     id itemForRow = [[self menuItems] objectAtIndex: rowIndex];

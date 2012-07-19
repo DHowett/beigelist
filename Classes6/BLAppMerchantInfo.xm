@@ -7,7 +7,7 @@
 //  Copyright 2012 What a Nutbar Software. All rights reserved.
 //
 
-//#import "BLAppMerchantInfo.h"
+//#import "Classes6/BLAppMerchantInfo.h"
 
 %subclass BLAppMerchantInfo: BRMerchantInfo
 
@@ -27,17 +27,17 @@
 #pragma mark Creation + Destruction
 #pragma mark
 
-// - (id) init
-// {
-//    // if((self = [super init]))
-//     //{
-//       //  _menuTitle = nil;
-// //        _menuIconURL = nil;
-// //        _merchantID = nil;
-// //        _preferredOrder = 0.0;
-//     //}
-//     return self;
-// }
+- (id) init
+{
+   if((self = %orig))
+    {
+      //  _menuTitle = nil;
+//        _menuIconURL = nil;
+//        _merchantID = nil;
+//        _preferredOrder = 0.0;
+    }
+    return self;
+}
 
 /*
 - (void) dealloc
@@ -52,7 +52,7 @@
 #pragma mark -
 #pragma mark Class Methods
 #pragma mark
-
+%new
 + (id) merchantInfo
 { return [[[BLAppMerchantInfo alloc] init] autorelease]; }
 
@@ -64,34 +64,35 @@
 #pragma mark Public Methods
 #pragma mark
 
-
+%new
 - (NSString *) menuTitle
 { return objc_getAssociatedObject(self, menuTitleKey); }
-
+%new
 - (void) setMenuTitle: (NSString *) menuTitle
 {
      objc_setAssociatedObject(self, menuTitleKey, menuTitle, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+%new
 - (NSURL *) menuIconURL
 { return objc_getAssociatedObject(self, menuIconKey); }
-
+%new
 - (void) setMenuIconURL: (NSURL *) menuIconURL
 {
     objc_setAssociatedObject(self, menuIconKey, menuIconURL, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+%new
 - (NSString *) merchantID
 {  return objc_getAssociatedObject(self, merchantIDKey); }
 
+%new
 - (void) setMerchantID: (NSString *) merchantID
 {
      objc_setAssociatedObject(self, merchantIDKey, merchantID, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+%new
 - (float) preferredOrder
 { return [objc_getAssociatedObject(self, preferredOrderKey) floatValue]; }
-
+%new
 - (void) setPreferredOrder: (float) preferredOrder
 { objc_setAssociatedObject(self, preferredOrderKey, [NSNumber numberWithFloat:preferredOrder], OBJC_ASSOCIATION_RETAIN_NONATOMIC); }
 

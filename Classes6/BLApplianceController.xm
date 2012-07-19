@@ -6,7 +6,7 @@
 //  Copyright 2012 nito, LLC. All rights reserved.
 //
 
-//#import "BLApplianceController.h"
+#import "Classes6/BLApplianceController.h"
 
 #define ATVMMC NSClassFromString(@"ATVMainMenuController")
 #define BRAPPM NSClassFromString(@"BRApplianceManager")
@@ -77,7 +77,7 @@
 
 		
 	}
-	
+	%orig;
 	//NSLog(@"mmcAPp: %@ brApp: %@", [[ATVMainMenuController mainMenu] appliances], [[BRApplianceManager singleton] appliances]);
 	//[super wasPopped]; //FIX_ME: HOW THE HELL DO U CALL SUPER??!?!?
 }

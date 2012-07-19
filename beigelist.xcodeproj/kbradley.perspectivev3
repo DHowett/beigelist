@@ -210,7 +210,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>898F125315B812980014433F</string>
+				<string>898F12A315B8797D0014433F</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>Makefile</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -218,16 +218,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>898F125415B812980014433F</string>
+						<string>898F12A415B8797D0014433F</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>Makefile</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>898F125515B812980014433F</string>
+						<string>898F12A715B879F40014433F</string>
 						<key>history</key>
 						<array>
-							<string>898F125115B812930014433F</string>
+							<string>898F12A115B879790014433F</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -362,7 +362,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>8957AAC51522929600B3CDF2</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BLAppLegacyMerchant.xm</string>
+								<string>BLAppMerchantInfo.xm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -370,11 +370,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>8957AAC61522929600B3CDF2</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BLAppLegacyMerchant.xm</string>
+										<string>BLAppMerchantInfo.xm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>898F125215B812980014433F</string>
+										<string>898F12A615B879F40014433F</string>
 										<key>history</key>
 										<array>
 											<string>8957AFC51522F40800B3CDF2</string>
@@ -385,22 +385,22 @@
 											<string>8957C56315252EEA00B3CDF2</string>
 											<string>8957C56415252EEA00B3CDF2</string>
 											<string>898F106315B7CAB20014433F</string>
-											<string>898F10B515B7D5D70014433F</string>
-											<string>898F10B715B7D5D70014433F</string>
 											<string>898F10EE15B7DBD50014433F</string>
 											<string>898F116015B7E6780014433F</string>
-											<string>898F119115B7F38A0014433F</string>
 											<string>898F119615B7F3DB0014433F</string>
-											<string>898F11A515B7F4A60014433F</string>
-											<string>898F11BA15B804040014433F</string>
 											<string>898F11E915B8098E0014433F</string>
 											<string>898F11EC15B8098E0014433F</string>
-											<string>898F11F515B80A4D0014433F</string>
-											<string>898F121C15B80DC00014433F</string>
 											<string>898F122B15B80EC90014433F</string>
 											<string>898F124415B80FDB0014433F</string>
 											<string>898F124515B80FDB0014433F</string>
-											<string>898F124D15B810530014433F</string>
+											<string>898F125F15B877130014433F</string>
+											<string>898F126115B877130014433F</string>
+											<string>898F128315B878920014433F</string>
+											<string>898F128F15B878C40014433F</string>
+											<string>898F129915B879480014433F</string>
+											<string>898F129D15B8795E0014433F</string>
+											<string>898F129E15B8795E0014433F</string>
+											<string>898F129015B878C40014433F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -698,7 +698,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>/Users/kbradley/Projects/ATV2/beigelist/beigelist.xcodeproj</string>
-		<string>898F125315B812980014433F</string>
+		<string>898F12A315B8797D0014433F</string>
 	</array>
 	<key>WindowString</key>
 	<string>33 136 1148 718 0 0 1440 878 </string>
