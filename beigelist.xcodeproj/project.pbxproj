@@ -19,13 +19,12 @@
 		8957AAEE152293C200B3CDF2 /* BLAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAE8152293C200B3CDF2 /* BLAppManager.m */; };
 		8957AAEF152293C200B3CDF2 /* BLAppMerchantInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAEA152293C200B3CDF2 /* BLAppMerchantInfo.m */; };
 		898F104715B7C92F0014433F /* vip5.xm in Resources */ = {isa = PBXBuildFile; fileRef = 898F104615B7C92F0014433F /* vip5.xm */; };
-		898F104C15B7CA510014433F /* vip6.xm in Resources */ = {isa = PBXBuildFile; fileRef = 898F104B15B7CA510014433F /* vip6.xm */; };
 		898F105A15B7CA9B0014433F /* BLAppLegacyCategoryController.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105015B7CA9B0014433F /* BLAppLegacyCategoryController.xm */; };
 		898F105B15B7CA9B0014433F /* BLAppLegacyMerchant.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */; };
 		898F105C15B7CA9B0014433F /* BLApplianceController.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */; };
 		898F105D15B7CA9B0014433F /* BLAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F105615B7CA9B0014433F /* BLAppManager.m */; };
 		898F105E15B7CA9B0014433F /* BLAppMerchantInfo.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105815B7CA9B0014433F /* BLAppMerchantInfo.xm */; };
-		898F105F15B7CA9B0014433F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F105915B7CA9B0014433F /* main.m */; };
+		898F11B115B7F9080014433F /* vip6.xm in Resources */ = {isa = PBXBuildFile; fileRef = 898F11B015B7F9080014433F /* vip6.xm */; };
 		8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */; };
 		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -53,7 +52,6 @@
 		8957AB711522D7EC00B3CDF2 /* AppleTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleTV.h; sourceTree = SOURCE_ROOT; };
 		8957B6EE1523DFCA00B3CDF2 /* AppleTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleTV.framework; path = ../../../FIVE_POINT_OH/Hoodoo9B179b.K66OS/PrivateFrameworks/AppleTV.framework; sourceTree = SOURCE_ROOT; };
 		898F104615B7C92F0014433F /* vip5.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vip5.xm; sourceTree = "<group>"; };
-		898F104B15B7CA510014433F /* vip6.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vip6.xm; path = ../../../.Trash/vip6.xm; sourceTree = "<group>"; };
 		898F104E15B7CA9B0014433F /* AppleTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleTV.h; sourceTree = "<group>"; };
 		898F104F15B7CA9B0014433F /* BLAppLegacyCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppLegacyCategoryController.h; sourceTree = "<group>"; };
 		898F105015B7CA9B0014433F /* BLAppLegacyCategoryController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BLAppLegacyCategoryController.xm; sourceTree = "<group>"; };
@@ -65,7 +63,7 @@
 		898F105615B7CA9B0014433F /* BLAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAppManager.m; sourceTree = "<group>"; };
 		898F105715B7CA9B0014433F /* BLAppMerchantInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppMerchantInfo.h; sourceTree = "<group>"; };
 		898F105815B7CA9B0014433F /* BLAppMerchantInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BLAppMerchantInfo.xm; sourceTree = "<group>"; };
-		898F105915B7CA9B0014433F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		898F11B015B7F9080014433F /* vip6.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vip6.xm; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* beigelist.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beigelist.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,7 +114,7 @@
 		08FB77AFFE84173DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				898F104B15B7CA510014433F /* vip6.xm */,
+				898F11B015B7F9080014433F /* vip6.xm */,
 				898F104615B7C92F0014433F /* vip5.xm */,
 				8957AACE152292E400B3CDF2 /* bacon.xm */,
 				8957AACF152292E400B3CDF2 /* Beigelist.h */,
@@ -177,7 +175,6 @@
 				898F105615B7CA9B0014433F /* BLAppManager.m */,
 				898F105715B7CA9B0014433F /* BLAppMerchantInfo.h */,
 				898F105815B7CA9B0014433F /* BLAppMerchantInfo.xm */,
-				898F105915B7CA9B0014433F /* main.m */,
 			);
 			path = Classes6;
 			sourceTree = "<group>";
@@ -238,7 +235,7 @@
 				8957AADE152292E400B3CDF2 /* README in Resources */,
 				8957AADF152292E400B3CDF2 /* vip2.xm in Resources */,
 				898F104715B7C92F0014433F /* vip5.xm in Resources */,
-				898F104C15B7CA510014433F /* vip6.xm in Resources */,
+				898F11B115B7F9080014433F /* vip6.xm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +258,6 @@
 				898F105C15B7CA9B0014433F /* BLApplianceController.xm in Sources */,
 				898F105D15B7CA9B0014433F /* BLAppManager.m in Sources */,
 				898F105E15B7CA9B0014433F /* BLAppMerchantInfo.xm in Sources */,
-				898F105F15B7CA9B0014433F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

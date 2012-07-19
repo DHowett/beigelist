@@ -1,15 +1,18 @@
 #import "AppleTV.h"
+#import "Classes6/BLAppLegacyMerchant.h"
 
 %subclass BLAppLegacyMerchant: ATVMerchant
-
-
-@implementation BLAppLegacyMerchant
-//@dynamic legacyApplianceClass, appliance, showInTopRow, presentedInTopRow;
 
 	static char const * const applianceKey = "Appliance";
 	static char const * const legacyApplianceKey = "LegacyAppliance";
 	static char const * const showInTopRowKey = "showInTopRow";
 	static char const * const presentedInTopRowKey = "presentedInTopRow";
+
+
+
+@implementation BLAppLegacyMerchant
+//@dynamic legacyApplianceClass, appliance, showInTopRow, presentedInTopRow;
+
 
 
 
@@ -19,7 +22,8 @@
 
 - (id) init
 {
-   // if((self = [super init]))
+	NSLog(@"init??");
+   //if((self = [super init]))
     //{
         id info = [NSClassFromString(@"BLAppMerchantInfo") merchantInfo];
         [self setInfo: info];
@@ -43,9 +47,10 @@
 #pragma mark -
 #pragma mark Class Methods
 #pragma mark
-
+%new
 + (id) merchant
 { return [[[BLAppLegacyMerchant alloc] init] autorelease]; }
+
 
 #pragma mark -
 #pragma mark Private Methods
@@ -55,13 +60,17 @@
 #pragma mark Public Methods
 #pragma mark
 
+-(void)setLegacyApplianceClassString:(NSString *)classString
+{ objc_setAssociatedObject(self, legacyApplianceKey, classString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
 
 - (Class) legacyApplianceClass
-{  return objc_getAssociatedObject(self, legacyApplianceKey); }
+{  return NSClassFromString(objc_getAssociatedObject(self, legacyApplianceKey)); }
 
 - (void) setLegacyApplianceClass: (Class) legacyApplianceClass
-{  objc_setAssociatedObject(self, legacyApplianceKey, legacyApplianceClass, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
+
+	{ 	NSLog(@"in here?");
+	 objc_setAssociatedObject(self, legacyApplianceKey, legacyApplianceClass, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
 - (id) rootController
 {
@@ -169,6 +178,7 @@
 
 - (void)setPresentedInTopRow:(BOOL)presented
 { objc_setAssociatedObject(self, presentedInTopRowKey, [NSNumber numberWithBool:presented], OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
+
 
 
 @end

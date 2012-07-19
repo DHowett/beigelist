@@ -64,6 +64,7 @@
 
 - (void) _loadAppliances
 {    
+	NSLog(@"load appliances?!?!");
     NSString *appleTVPath = [[NSBundle mainBundle] bundlePath];
 	NSString *frappPath = [appleTVPath stringByAppendingPathComponent: @"Appliances"];
 	NSDirectoryEnumerator *iterator = [[NSFileManager defaultManager] enumeratorAtPath: frappPath];
@@ -82,9 +83,30 @@
                 NSDictionary *frappBundleInfoDict = [frappBundle infoDictionary];
                 NSDictionary *candidate = nil;
 				
-                id frappMerchant = [LEGMERCH merchant];
-                [frappMerchant setLegacyApplianceClass: frappClass];
+				NSString *theString = NSStringFromClass([LEGMERCH superclass]);
+				NSLog(@"superclass: %@", theString);
+                id frappMerchant = [[LEGMERCH alloc]init];
+				NSLog(@"here????");
+				
+				BOOL responds = [frappMerchant respondsToSelector:@selector(rootController)];
+				if (responds == TRUE)
+				{
+					NSLog(@"responds to rootController");
+				}
+				
+				NSLog(@"frapMerchant: %@", frappMerchant);
+				[frappMerchant retain];
+				
+				BOOL respond2 = [frappMerchant respondsToSelector:@selector(appliance)];
+				if (respond2 == TRUE)
+				{
+					NSLog(@"responds to appliance");
+				}
+				
+                [frappMerchant setLegacyApplianceClassString: NSStringFromClass(frappClass)];
                 
+				NSLog(@"here?2");
+				
                 NSString *title = [[frappBundle localizedInfoDictionary] objectForKey: (NSString *)kCFBundleNameKey];
                 { [frappMerchant setTitle: title]; }
                 
