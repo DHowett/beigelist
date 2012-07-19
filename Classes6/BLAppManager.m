@@ -85,6 +85,8 @@
 				
 				id frappMerchant = [[LEGMERCH alloc]init];
 			
+				NSLog(@"%@", LEGMERCH);
+				
 				NSLog(@"frapMerchant: %@", frappMerchant);
 				
 				BOOL respond2 = [frappMerchant respondsToSelector:@selector(appliance)];
@@ -93,7 +95,7 @@
 					NSLog(@"responds to appliance");
 				}
 				
-                [frappMerchant setLegacyApplianceClassString: NSStringFromClass(frappClass)];
+                [frappMerchant setLegacyApplianceClass:frappClass];
                 
 				NSLog(@"here?2");
 				
@@ -127,8 +129,14 @@
 				
 				[frappMerchant setShowInTopRow:[[frappBundleInfoDict objectForKey:kBLShowInTopRow] boolValue]];
                 
-				[_appliances addObject: frappMerchant];
-				NSLog(@"BLAppManager -> loaded legacy %@", NSStringFromClass(frappClass));
+				NSLog(@"frappMerchant: %@", frappMerchant);
+				
+				if (frappMerchant != nil)
+				{
+					[_appliances addObject: frappMerchant];
+					NSLog(@"BLAppManager -> loaded legacy %@", NSStringFromClass(frappClass));
+				}
+					
 				
 
                 

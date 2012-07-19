@@ -47,7 +47,7 @@
 #pragma mark -
 #pragma mark Class Methods
 #pragma mark
-%new + (id) merchant { return [[[BLAppLegacyMerchant alloc] init] autorelease]; }
+%new + (id) merchant { return [[[NSClassFromString(@"BLAppLegacyMerchant") alloc] init] autorelease]; }
 
 
 #pragma mark -
@@ -61,11 +61,11 @@
 { objc_setAssociatedObject(self, legacyApplianceKey, classString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
 %new - (Class) legacyApplianceClass
-{  return NSClassFromString(objc_getAssociatedObject(self, legacyApplianceKey)); }
+{  return objc_getAssociatedObject(self, legacyApplianceKey); }
 
 %new - (void) setLegacyApplianceClass: (Class) legacyApplianceClass
 
-	{ 	NSLog(@"in here?");
+	{ 
 	 objc_setAssociatedObject(self, legacyApplianceKey, legacyApplianceClass, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 	
 - (id) rootController
