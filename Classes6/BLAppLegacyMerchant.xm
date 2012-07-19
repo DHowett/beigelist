@@ -1,5 +1,5 @@
 #import "AppleTV.h"
-//#import "Classes6/BLAppLegacyMerchant.h"
+#import "Classes6/BLAppLegacyMerchant.h"
 
 %subclass BLAppLegacyMerchant: ATVMerchant
 
@@ -59,7 +59,7 @@
 #pragma mark -
 #pragma mark Public Methods
 #pragma mark
-%new
+%new(v@:@)
 -(void)setLegacyApplianceClassString:(NSString *)classString
 { objc_setAssociatedObject(self, legacyApplianceKey, classString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 

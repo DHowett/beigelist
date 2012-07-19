@@ -21,6 +21,7 @@
 }
 - (id)info; //attempt to keep the level of warnings of compiler low.
 + (id) merchant;
+-(void)setLegacyApplianceClassString:(NSString *)classString;
 - (Class) legacyApplianceClass;
 - (void) setLegacyApplianceClass: (Class) legacyApplianceClass;
 - (NSString *) title;

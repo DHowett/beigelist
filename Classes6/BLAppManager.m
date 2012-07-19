@@ -83,19 +83,9 @@
                 NSDictionary *frappBundleInfoDict = [frappBundle infoDictionary];
                 NSDictionary *candidate = nil;
 				
-				NSString *theString = NSStringFromClass([LEGMERCH superclass]);
-				NSLog(@"superclass: %@", theString);
-                id frappMerchant = [[LEGMERCH alloc]init];
-				NSLog(@"here????");
-				
-				BOOL responds = [frappMerchant respondsToSelector:@selector(rootController)];
-				if (responds == TRUE)
-				{
-					NSLog(@"responds to rootController");
-				}
-				
+				id frappMerchant = [[LEGMERCH alloc]init];
+			
 				NSLog(@"frapMerchant: %@", frappMerchant);
-				[frappMerchant retain];
 				
 				BOOL respond2 = [frappMerchant respondsToSelector:@selector(appliance)];
 				if (respond2 == TRUE)
