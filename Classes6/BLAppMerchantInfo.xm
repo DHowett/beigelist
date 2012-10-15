@@ -53,7 +53,7 @@
 #pragma mark Class Methods
 #pragma mark
 %new + (id) merchantInfo
-{ return [[[NSClassFromString(@"BLAppMerchantInfo") alloc] init] autorelease]; }
+{ return [[[%c(BLAppMerchantInfo) alloc] init] autorelease]; }
 
 #pragma mark -
 #pragma mark Private Methods

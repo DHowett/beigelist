@@ -8,8 +8,8 @@
 
 //#import "Classes6/BLApplianceController.h"
 
-#define ATVMMC NSClassFromString(@"ATVMainMenuController")
-#define BRAPPM NSClassFromString(@"BRApplianceManager")
+#define ATVMMC %c(ATVMainMenuController)
+#define BRAPPM %c(BRApplianceManager)
 
 %subclass BLApplianceController: ATVApplianceController
 
@@ -54,7 +54,129 @@
  
  */
 
+%new + (NSString *)blProperVersion
+{
+	Class cls = NSClassFromString(@"ATVVersionInfo");
+	if (cls != nil)
+	{ return [cls currentOSVersion]; }
+	
+	return nil;	
+}
 
+%new - (BOOL)blSixPointOhPlus
+{
+	if ([self respondsToSelector:@selector(controls)])
+	{
+		return (FALSE);
+	}
+	
+	return (TRUE);
+}
+
+%new + (BOOL)blSixPointOhPlus
+{
+	
+	NSString *versionNumber = [%c(BLApplianceController) blProperVersion];
+	NSString *baseline = @"6.0";
+	NSComparisonResult theResult = [versionNumber compare:baseline options:NSNumericSearch];
+		//NSLog(@"properVersion: %@", versionNumber);
+		//NSLog(@"theversion: %@  installed version %@", theVersion, installedVersion);
+	if ( theResult == NSOrderedDescending )
+	{
+			//	NSLog(@"%@ is greater than %@", versionNumber, baseline);
+		
+		return YES;
+		
+	} else if ( theResult == NSOrderedAscending ){
+		
+			//NSLog(@"%@ is greater than %@", baseline, versionNumber);
+		return NO;
+		
+	} else if ( theResult == NSOrderedSame ) {
+		
+			//		NSLog(@"%@ is equal to %@", versionNumber, baseline);
+		return YES;
+	}
+	
+	return NO;
+}
+
+%new - (id)viewStack
+{
+	return [[[self view] content] stack];
+	__block id stack = nil;
+	
+	dispatch_sync(dispatch_get_main_queue(), ^{
+			// code below is executed synchronously
+			// access to UI is safe is its a main thread
+		stack = [[[self view] content] stack];
+	});
+	
+	return stack;
+}
+
+%new - (void)popViewStackController:(id)value
+{
+	[value popController];
+	
+	
+}
+
+%new - (int)viewStackCount
+{
+	return [[[self viewStack] controllers] count];
+}
+
+
+- (BOOL)brEventAction:(id)fp8
+{
+	
+	
+	int theAction = (int)[fp8 remoteAction];
+	int theValue = (int)[fp8 value];
+
+	switch (theAction)
+	{
+		case 1:
+						
+			if ([self blSixPointOhPlus])
+			{
+				id theViewStack = [self viewStack];
+				
+				int theCount = [[theViewStack controllers] count];
+				
+					//NSLog(@"theVIewstack: %@ count: %i", theViewStack, theCount);
+					//	NSLog(@"is six point oh");
+					//NSLog(@"stack controllers: %@", [[self viewStack] controllers]);
+				if (theCount == 1)
+				{
+					
+					return %orig;
+				}
+				
+				[self performSelectorOnMainThread:@selector(popViewStackController:) withObject:theViewStack waitUntilDone:TRUE];
+				
+					//[self popViewStackController];
+					//[[self viewStack] popController];
+				
+				
+				return YES;
+					//BLApplianceController
+			}
+			
+			
+			return NO;
+			
+					
+			return %orig;
+				//return YES;
+			
+		default:
+			return %orig;
+		
+	}
+	return YES;
+}
 
 - (void)wasPopped
 {

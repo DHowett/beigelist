@@ -15,7 +15,7 @@
 //@implementation BLAppLegacyCategoryController
 
 	static char const * const menuItemKey = "MenuItems";
-	static char const * const legacyApplianceKey = "LegacyAppliance";
+	static char const * const legacyApplianceKey2 = "LegacyAppliance2";
 
 
 //@dynamic menuItems, legacyAppliance;
@@ -60,7 +60,7 @@
 #pragma mark Private Methodse
 #pragma mark
 
-#define BRMI NSClassFromString(@"BRMenuItem")
+#define BRMI %c(BRMenuItem)
 %new - (void) _generateCategoryMenuItems {
     id items = [self menuItems];
 	id legacyApp = [self legacyAppliance];
@@ -84,10 +84,10 @@
 #pragma mark Public Methods
 #pragma mark
 %new - (id) legacyAppliance
-{ return objc_getAssociatedObject(self, legacyApplianceKey ); }
+{ return objc_getAssociatedObject(self, legacyApplianceKey2 ); }
 %new - (void) setLegacyAppliance: (id) legacyAppliance
 {
-   objc_setAssociatedObject(self, legacyApplianceKey, legacyAppliance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+   objc_setAssociatedObject(self, legacyApplianceKey2, legacyAppliance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     [self _generateCategoryMenuItems];
 }
@@ -116,9 +116,13 @@
 //     [super controlWasDeactivated];
 // }
 %new - (void)itemSelected:(long)rowIndex {
+	
+	
     id itemForRow = [[self menuItems] objectAtIndex: rowIndex];
-    id controller = [[self legacyAppliance] controllerForIdentifier: [itemForRow identifier] args: nil];
-    [[self stack] pushController: controller];
+	
+	id controller = [[self legacyAppliance] controllerForIdentifier: [itemForRow identifier] args: nil];
+    
+	[[self stack] pushController: controller];
 }
 
 //@end

@@ -11,7 +11,7 @@
 		<key>CoreFoundationVersion</key>
 		<array>
 			<real>690.1</real>
-			<real>788</real>
+			<integer>788</integer>
 		</array>
 	</dict>
 </dict>

@@ -1,10 +1,14 @@
 #import "AppleTV.h"
 //#import "Classes6/BLAppLegacyMerchant.h"
 
+static BOOL _forceLegacyNav;
+
 %subclass BLAppLegacyMerchant: ATVMerchant
 
+
+
 	static char const * const applianceKey = "Appliance";
-	static char const * const legacyApplianceKey = "LegacyAppliance";
+	static char const * const legacyApplianceClassKey = "LegacyApplianceClass";
 	static char const * const showInTopRowKey = "showInTopRow";
 	static char const * const presentedInTopRowKey = "presentedInTopRow";
 
@@ -22,10 +26,10 @@
 
 - (id) init
 {
-	NSLog(@"init??");
-   if((self = %orig))
+	
+	if((self = %orig))
     {
-        id info = [NSClassFromString(@"BLAppMerchantInfo") merchantInfo];
+        id info = [%c(BLAppMerchantInfo) merchantInfo];
         [self setInfo: info];
         
         //_legacyApplianceClass = nil;
@@ -41,13 +45,13 @@
 //}
 
 
-#define BRAPPMAN NSClassFromString(@"BRApplianceManager")
+#define BRAPPMAN %c(BRApplianceManager)
 
 
 #pragma mark -
 #pragma mark Class Methods
 #pragma mark
-%new + (id) merchant { return [[[NSClassFromString(@"BLAppLegacyMerchant") alloc] init] autorelease]; }
+%new + (id) merchant { return [[[%c(BLAppLegacyMerchant) alloc] init] autorelease]; }
 
 
 #pragma mark -
@@ -58,46 +62,49 @@
 #pragma mark Public Methods
 #pragma mark
 %new -(void)setLegacyApplianceClassString:(NSString *)classString
-{ objc_setAssociatedObject(self, legacyApplianceKey, classString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
+{ objc_setAssociatedObject(self, legacyApplianceClassKey, classString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 
 %new - (Class) legacyApplianceClass
-{  return objc_getAssociatedObject(self, legacyApplianceKey); }
+{  return objc_getAssociatedObject(self, legacyApplianceClassKey); }
 
 %new - (void) setLegacyApplianceClass: (Class) legacyApplianceClass
 
 	{ 
-	 objc_setAssociatedObject(self, legacyApplianceKey, legacyApplianceClass, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
+	 objc_setAssociatedObject(self, legacyApplianceClassKey, legacyApplianceClass, OBJC_ASSOCIATION_RETAIN_NONATOMIC);}
 	
 - (id) rootController
 {
+	
 	id controller = nil;
-   id legacyAppliance = [[[self legacyApplianceClass] alloc] init];
-
+   id legacyAppliance = [[[self legacyApplianceClass] alloc] initWithApplianceInfo:nil]; 
+	
 	/*
  
  its less than ideal to have to init the legacyAppliance to see if it has applianceInfo that is not nil, but not really sure what else to do
  
  */
 	
-	
-	
-	if ([legacyAppliance applianceInfo] != nil)
+
+	if ([legacyAppliance applianceInfo] != nil && _forceLegacyNav == FALSE)
 	{
 	//	NSLog(@"legacyApplianceinfo: %@", [legacyAppliance applianceInfo]);
 		[[BRAPPMAN singleton] _applianceDidReloadCategories:legacyAppliance];
-		controller = [[[NSClassFromString(@"BLApplianceController") alloc] initWithAppliance:legacyAppliance] autorelease];
+		controller = [[[%c(BLApplianceController) alloc] initWithAppliance:legacyAppliance] autorelease];
 		[legacyAppliance autorelease];
 	
 	} else {
 	
-		[legacyAppliance release];
-		legacyAppliance = nil;
-		//NSLog(@"applianceInfo == nil");
-		Class blalcc = NSClassFromString(@"BLAppLegacyCategoryController");
+
+		
+		Class blalcc = %c(BLAppLegacyCategoryController);
 		controller = [[[blalcc alloc] init] autorelease];
+		
 		[controller setListTitle: [self title]];
-		id legacyAppliance = [[[self legacyApplianceClass] init] autorelease];
+		
+		//id legacyAppliance = [[[[self legacyApplianceClass]alloc] init] autorelease];
+		
 		[controller setLegacyAppliance: legacyAppliance];
+		
 		
 	}
 	
@@ -106,10 +113,16 @@
     return controller;
 }
 
-// - (id)info
-// {
-// 	return [super info];
-// }
+ - (id)info
+ {
+ 	return %orig;
+ }
+
+
+%new - (BOOL)forceLegacyNav
+{ return _forceLegacyNav; }
+%new - (void)setForceLegacyNav:(BOOL)value 
+{ _forceLegacyNav = value; }
 %new - (NSString *) title
 { return [[self info] menuTitle]; }
 %new - (void) setTitle: (NSString *) title
@@ -138,7 +151,7 @@
 		myAppliance = [self appliance];
 		if (!myAppliance)
 		{
-			myAppliance = [[[self legacyApplianceClass] alloc] init];
+			myAppliance = [[[self legacyApplianceClass] alloc] initWithApplianceInfo:nil];
 			[self setAppliance:myAppliance];
 		}
 		

@@ -13,16 +13,19 @@
 #define kBLPreferedOrder @"BLMerchantPreferedOrderValue"
 #define kBLShowInTopRow @"BLShowInFirstRow"
 #define MERCHANT_COORD NSClassFromString(@"ATVMerchantCoordinator")
-
+#define kBLForceLegacyNav @"BLForceLegacyNav"
 
 @interface BLAppManager: NSObject 
 {    
     NSMutableArray *_appliances;
+	NSMutableArray *_applianceIdentifiers;
     BOOL _appliancesLoaded;
 }
 + (id) sharedAppManager;
 
 - (NSArray *) appliances;
+- (NSArray *) applianceIdentifiers;
+- (id)applianceWithIdentifier:(NSString *)theId;
 - (BOOL) appliancesLoaded;
 - (void) clearAppliances;
 - (void) reloadAppliances;
