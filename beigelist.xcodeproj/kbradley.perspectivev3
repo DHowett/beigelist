@@ -224,7 +224,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>8934C89D162CB9AF00E41B6F</string>
+						<string>8934CDE2162CBDCA00E41B6F</string>
 						<key>history</key>
 						<array>
 							<string>8934C882162C087B00E41B6F</string>
@@ -321,7 +321,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -371,7 +371,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8934C89C162CB9AF00E41B6F</string>
+										<string>8934CDE1162CBDCA00E41B6F</string>
 										<key>history</key>
 										<array>
 											<string>8957AFC51522F40800B3CDF2</string>
@@ -414,7 +414,7 @@
 											<string>897F4ED415E8CA1C00BFD639</string>
 											<string>894482B91627D65300FEF401</string>
 											<string>8934C817162C008E00E41B6F</string>
-											<string>8934C883162C09E400E41B6F</string>
+											<string>8934CDDA162CBD2400E41B6F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -443,8 +443,6 @@
 							<key>Tabs</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>

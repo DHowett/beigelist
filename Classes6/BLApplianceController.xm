@@ -54,56 +54,33 @@
  
  */
 
-%new + (NSString *)blProperVersion
-{
-	Class cls = NSClassFromString(@"ATVVersionInfo");
-	if (cls != nil)
-	{ return [cls currentOSVersion]; }
-	
-	return nil;	
-}
 
-%new - (BOOL)blSixPointOhPlus
-{
-	if ([self respondsToSelector:@selector(controls)])
-	{
-		return (FALSE);
-	}
-	
-	return (TRUE);
-}
+/*
+ 
+ from blProperVersion - > BREventAction are all new for iOS 6
+ 
+ there is a new class called ATVNavigationBar that must need to be overriden differently per controller to determine whether to pop off, or to show the nav bar.
+ without these modifications it will always show the nav bar now matter how far you are drilled down. There are two separate BRControllerStacks, one for the main menu
+ controls and the BLApplianceController, and then one for the [[view] content] of said BRViewController (BLApplianceController inherits from there iirc)
+ 
+ all i could think of to get this done at the root level was to grab this stack when menu is pressed in BREventAction and check the [[controllers] count] value for 1, if its
+ 1 just return the default behavior (either pop up the navbar, or if the nav bar is up pop the full BLApplianceController off)
+ 
+ there is one major problem with this, is doesnt appear to be UI thread safe or whatever, however if i try to gra the stack as illustrated in viewStack, everything locks up,
+ if i dont (which i dont right now) the animation of popping off a controller looks really choppy and terrible. i used to have a versionCheck for 6.0+ in here but then 
+ remebered we only run this on iOS 6 plus, so it was frivolous.
+ 
+ 
+ 
+ 
+ */
 
-%new + (BOOL)blSixPointOhPlus
-{
-	
-	NSString *versionNumber = [%c(BLApplianceController) blProperVersion];
-	NSString *baseline = @"6.0";
-	NSComparisonResult theResult = [versionNumber compare:baseline options:NSNumericSearch];
-		//NSLog(@"properVersion: %@", versionNumber);
-		//NSLog(@"theversion: %@  installed version %@", theVersion, installedVersion);
-	if ( theResult == NSOrderedDescending )
-	{
-			//	NSLog(@"%@ is greater than %@", versionNumber, baseline);
-		
-		return YES;
-		
-	} else if ( theResult == NSOrderedAscending ){
-		
-			//NSLog(@"%@ is greater than %@", baseline, versionNumber);
-		return NO;
-		
-	} else if ( theResult == NSOrderedSame ) {
-		
-			//		NSLog(@"%@ is equal to %@", versionNumber, baseline);
-		return YES;
-	}
-	
-	return NO;
-}
 
 %new - (id)viewStack
 {
 	return [[[self view] content] stack];
+	
+	
 	__block id stack = nil;
 	
 	dispatch_sync(dispatch_get_main_queue(), ^{
@@ -128,26 +105,24 @@
 }
 
 
+
 - (BOOL)brEventAction:(id)fp8
 {
 	
 	
 	int theAction = (int)[fp8 remoteAction];
 	int theValue = (int)[fp8 value];
-
+	id theViewStack = nil;
+	int theCount;
 	switch (theAction)
 	{
 		case 1:
 						
-			if ([self blSixPointOhPlus])
-			{
-				id theViewStack = [self viewStack];
+			
+				theViewStack = [self viewStack];
 				
-				int theCount = [[theViewStack controllers] count];
+				theCount = [[theViewStack controllers] count];
 				
-					//NSLog(@"theVIewstack: %@ count: %i", theViewStack, theCount);
-					//	NSLog(@"is six point oh");
-					//NSLog(@"stack controllers: %@", [[self viewStack] controllers]);
 				if (theCount == 1)
 				{
 					
@@ -156,20 +131,11 @@
 				
 				[self performSelectorOnMainThread:@selector(popViewStackController:) withObject:theViewStack waitUntilDone:TRUE];
 				
-					//[self popViewStackController];
-					//[[self viewStack] popController];
-				
 				
 				return YES;
-					//BLApplianceController
-			}
+				
 			
-			
-			return NO;
-			
-					
-			return %orig;
-				//return YES;
+		
 			
 		default:
 			return %orig;

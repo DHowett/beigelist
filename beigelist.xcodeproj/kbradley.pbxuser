@@ -103,6 +103,17 @@
 			8934C89B162CB91100E41B6F /* PBXTextBookmark */ = 8934C89B162CB91100E41B6F /* PBXTextBookmark */;
 			8934C89C162CB9AF00E41B6F /* PBXTextBookmark */ = 8934C89C162CB9AF00E41B6F /* PBXTextBookmark */;
 			8934C89D162CB9AF00E41B6F /* PBXTextBookmark */ = 8934C89D162CB9AF00E41B6F /* PBXTextBookmark */;
+			8934C89E162CBBD600E41B6F /* PBXTextBookmark */ = 8934C89E162CBBD600E41B6F /* PBXTextBookmark */;
+			8934C89F162CBBD600E41B6F /* PBXTextBookmark */ = 8934C89F162CBBD600E41B6F /* PBXTextBookmark */;
+			8934C8A0162CBC3F00E41B6F /* PBXTextBookmark */ = 8934C8A0162CBC3F00E41B6F /* PBXTextBookmark */;
+			8934C8A1162CBC3F00E41B6F /* PBXTextBookmark */ = 8934C8A1162CBC3F00E41B6F /* PBXTextBookmark */;
+			8934CDDA162CBD2400E41B6F /* PBXTextBookmark */ = 8934CDDA162CBD2400E41B6F /* PBXTextBookmark */;
+			8934CDDB162CBD2400E41B6F /* PBXTextBookmark */ = 8934CDDB162CBD2400E41B6F /* PBXTextBookmark */;
+			8934CDDC162CBD2400E41B6F /* PBXTextBookmark */ = 8934CDDC162CBD2400E41B6F /* PBXTextBookmark */;
+			8934CDDE162CBD8000E41B6F /* PBXTextBookmark */ = 8934CDDE162CBD8000E41B6F /* PBXTextBookmark */;
+			8934CDDF162CBD8000E41B6F /* PBXTextBookmark */ = 8934CDDF162CBD8000E41B6F /* PBXTextBookmark */;
+			8934CDE1162CBDCA00E41B6F /* PBXTextBookmark */ = 8934CDE1162CBDCA00E41B6F /* PBXTextBookmark */;
+			8934CDE2162CBDCA00E41B6F /* PBXTextBookmark */ = 8934CDE2162CBDCA00E41B6F /* PBXTextBookmark */;
 			894482B91627D65300FEF401 = 894482B91627D65300FEF401 /* PBXTextBookmark */;
 			894482BA1627D65300FEF401 = 894482BA1627D65300FEF401 /* PBXTextBookmark */;
 			8957AAD7152292E400B3CDF2 = 8957AAD7152292E400B3CDF2 /* vip2.xm */;
@@ -223,7 +234,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 173";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -233,7 +244,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 103";
 		rLen = 0;
-		rLoc = 3340;
+		rLoc = 3589;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 1846;
@@ -243,7 +254,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 173";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -253,7 +264,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 101";
 		rLen = 0;
-		rLoc = 3302;
+		rLoc = 3577;
 		rType = 0;
 		vrLen = 1284;
 		vrLoc = 1846;
@@ -263,7 +274,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 176";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -273,7 +284,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 126";
 		rLen = 0;
-		rLoc = 4054;
+		rLoc = 3940;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 2344;
@@ -283,7 +294,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 176";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -293,7 +304,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 66";
 		rLen = 0;
-		rLoc = 1956;
+		rLoc = 2938;
 		rType = 0;
 		vrLen = 1628;
 		vrLoc = 980;
@@ -303,7 +314,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 176";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -313,7 +324,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 107";
 		rLen = 0;
-		rLoc = 3650;
+		rLoc = 3709;
 		rType = 0;
 		vrLen = 1269;
 		vrLoc = 1854;
@@ -323,7 +334,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 176";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -333,7 +344,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 181";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -343,7 +354,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 107";
 		rLen = 0;
-		rLoc = 3650;
+		rLoc = 3709;
 		rType = 0;
 		vrLen = 1269;
 		vrLoc = 1854;
@@ -353,7 +364,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 96";
 		rLen = 0;
-		rLoc = 3153;
+		rLoc = 3389;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 2048;
@@ -363,7 +374,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 186";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -373,7 +384,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 121";
 		rLen = 0;
-		rLoc = 3879;
+		rLoc = 3875;
 		rType = 0;
 		vrLen = 957;
 		vrLoc = 2303;
@@ -383,7 +394,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 186";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -393,7 +404,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 117";
 		rLen = 0;
-		rLoc = 3645;
+		rLoc = 3704;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 2303;
@@ -403,7 +414,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 186";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -413,7 +424,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 117";
 		rLen = 0;
-		rLoc = 3637;
+		rLoc = 3696;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 2303;
@@ -423,7 +434,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 194";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -433,7 +444,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 104";
 		rLen = 0;
-		rLoc = 2994;
+		rLoc = 3230;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 2303;
@@ -443,7 +454,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 194";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -453,7 +464,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 124";
 		rLen = 0;
-		rLoc = 3564;
+		rLoc = 3692;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 2563;
@@ -463,7 +474,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 198";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -473,7 +484,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 129";
 		rLen = 0;
-		rLoc = 3645;
+		rLoc = 3704;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 2563;
@@ -483,7 +494,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 199";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -493,7 +504,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 126";
 		rLen = 0;
-		rLoc = 3392;
+		rLoc = 3631;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 2563;
@@ -503,7 +514,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 199";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -513,7 +524,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 126";
 		rLen = 0;
-		rLoc = 3392;
+		rLoc = 3631;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 2563;
@@ -523,7 +534,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 199";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -533,7 +544,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 126";
 		rLen = 0;
-		rLoc = 3392;
+		rLoc = 3631;
 		rType = 0;
 		vrLen = 1156;
 		vrLoc = 2286;
@@ -543,7 +554,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 200";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -553,7 +564,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 96";
 		rLen = 0;
-		rLoc = 2768;
+		rLoc = 3004;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 2286;
@@ -563,7 +574,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 200";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -573,7 +584,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 127";
 		rLen = 0;
-		rLoc = 3392;
+		rLoc = 3631;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 2286;
@@ -583,7 +594,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 202";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -593,7 +604,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 130";
 		rLen = 0;
-		rLoc = 3521;
+		rLoc = 3692;
 		rType = 0;
 		vrLen = 1125;
 		vrLoc = 2433;
@@ -603,7 +614,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 203";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -613,7 +624,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 133";
 		rLen = 0;
-		rLoc = 3637;
+		rLoc = 3696;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 2433;
@@ -623,7 +634,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 206";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -633,7 +644,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 140";
 		rLen = 0;
-		rLoc = 3854;
+		rLoc = 3875;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 2599;
@@ -643,7 +654,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 206";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -653,7 +664,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 136";
 		rLen = 0;
-		rLoc = 3681;
+		rLoc = 3740;
 		rType = 0;
 		vrLen = 1107;
 		vrLoc = 2601;
@@ -663,7 +674,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 206";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -673,7 +684,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 141";
 		rLen = 0;
-		rLoc = 3862;
+		rLoc = 3875;
 		rType = 0;
 		vrLen = 881;
 		vrLoc = 2849;
@@ -687,7 +698,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 206";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -697,7 +708,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 219";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -707,7 +718,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 153";
 		rLen = 0;
-		rLoc = 3854;
+		rLoc = 3875;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 2907;
@@ -717,7 +728,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 221";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -727,7 +738,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 120";
 		rLen = 0;
-		rLoc = 3073;
+		rLoc = 3309;
 		rType = 0;
 		vrLen = 1165;
 		vrLoc = 2755;
@@ -737,7 +748,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 214";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -747,7 +758,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 110";
 		rLen = 0;
-		rLoc = 3071;
+		rLoc = 3307;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 2803;
@@ -757,7 +768,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 218";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -767,7 +778,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 112";
 		rLen = 0;
-		rLoc = 3047;
+		rLoc = 3283;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 2577;
@@ -777,7 +788,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 215";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -787,7 +798,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 96";
 		rLen = 0;
-		rLoc = 2731;
+		rLoc = 2963;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 2222;
@@ -797,7 +808,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 220";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -807,7 +818,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 68";
 		rLen = 0;
-		rLoc = 1947;
+		rLoc = 2938;
 		rType = 0;
 		vrLen = 1448;
 		vrLoc = 1436;
@@ -817,7 +828,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 225";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 869;
@@ -827,10 +838,120 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 106";
 		rLen = 0;
-		rLoc = 2731;
+		rLoc = 2963;
 		rType = 0;
 		vrLen = 1194;
 		vrLoc = 2707;
+	};
+	8934C89E162CBBD600E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 238";
+		rLen = 0;
+		rLoc = 5209;
+		rType = 0;
+		vrLen = 738;
+		vrLoc = 869;
+	};
+	8934C89F162CBBD600E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 63";
+		rLen = 0;
+		rLoc = 2926;
+		rType = 0;
+		vrLen = 1252;
+		vrLoc = 2222;
+	};
+	8934C8A0162CBC3F00E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 179";
+		rLen = 0;
+		rLoc = 5209;
+		rType = 0;
+		vrLen = 738;
+		vrLoc = 869;
+	};
+	8934C8A1162CBC3F00E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 114";
+		rLen = 0;
+		rLoc = 3692;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 2321;
+	};
+	8934CDDA162CBD2400E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 181";
+		rLen = 0;
+		rLoc = 5209;
+		rType = 0;
+		vrLen = 738;
+		vrLoc = 869;
+	};
+	8934CDDB162CBD2400E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 188";
+		rLen = 0;
+		rLoc = 5209;
+		rType = 0;
+		vrLen = 738;
+		vrLoc = 869;
+	};
+	8934CDDC162CBD2400E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 70";
+		rLen = 0;
+		rLoc = 2926;
+		rType = 0;
+		vrLen = 1916;
+		vrLoc = 1355;
+	};
+	8934CDDE162CBD8000E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 190";
+		rLen = 0;
+		rLoc = 5209;
+		rType = 0;
+		vrLen = 738;
+		vrLoc = 869;
+	};
+	8934CDDF162CBD8000E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 72";
+		rLen = 0;
+		rLoc = 2926;
+		rType = 0;
+		vrLen = 1078;
+		vrLoc = 3342;
+	};
+	8934CDE1162CBDCA00E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 191";
+		rLen = 0;
+		rLoc = 5209;
+		rType = 0;
+		vrLen = 738;
+		vrLoc = 869;
+	};
+	8934CDE2162CBDCA00E41B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
+		name = "BLApplianceController.xm: 124";
+		rLen = 0;
+		rLoc = 3636;
+		rType = 0;
+		vrLen = 1089;
+		vrLoc = 3342;
 	};
 	894482B91627D65300FEF401 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1442,9 +1563,9 @@
 	};
 	898F105415B7CA9B0014433F /* BLApplianceController.xm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1315, 3042}}";
-			sepNavSelRange = "{2731, 0}";
-			sepNavVisRange = "{2707, 1194}";
+			sepNavIntBoundsRect = "{{0, 0}, {1315, 2535}}";
+			sepNavSelRange = "{3636, 0}";
+			sepNavVisRange = "{3342, 1089}";
 			sepNavWindowFrame = "{{15, 0}, {1374, 878}}";
 		};
 	};
@@ -1581,7 +1702,7 @@
 		fRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */;
 		name = "BLApplianceController.xm: 103";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 5209;
 		rType = 0;
 		vrLen = 795;
 		vrLoc = 869;
