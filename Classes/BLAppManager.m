@@ -161,8 +161,8 @@
 			NSString *fullPath = [frappPath stringByAppendingPathComponent: filePath];
 			NSBundle *frappBundle = [NSBundle bundleWithPath: fullPath];
 			NSLog(@"BLAppManager -> attempting to load legacy %@...", [filePath lastPathComponent]);
-            
-            if([frappBundle load])
+            NSError *theError = nil;
+            if([frappBundle loadAndReturnError:&theError])
             {
                 Class frappClass = [frappBundle principalClass];
                 NSDictionary *frappBundleInfoDict = [frappBundle infoDictionary];
@@ -232,7 +232,7 @@
                 
             }
             else
-            { NSLog(@"BLAppManager -> failed to load legacy %@", [filePath lastPathComponent]); }
+            { NSLog(@"BLAppManager -> failed to load legacy %@ with error: %@", [filePath lastPathComponent], theError); }
 		}
     }
 	

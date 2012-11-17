@@ -3,7 +3,7 @@ Name: Beigelist
 Provides: org.awkwardtv.whitelist
 Depends: mobilesubstrate (>= 0.9.3353-1)
 Definition: evade the BackRow appliance whitelist! it might be some sort of ecru.
-Version: 2.2.4
+Version: 2.2.5
 Architecture: iphoneos-arm
 Author: Dustin Howett <dustin@howett.net>
 Maintainer: Dustin Howett <dustin@howett.net>

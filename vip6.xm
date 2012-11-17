@@ -52,6 +52,8 @@
     return returnArray;
 }
 
+ */
+
 - (id)allMerchants //having both allMerchants and enabledMerchants doesn't really seem to help, enabledMerchants is a necessity to edit
 {
 	//%log;
@@ -66,7 +68,7 @@
 
     return returnArray;
 }
-*/
+
 
 - (id)enabledMerchants
 {

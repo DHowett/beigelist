@@ -1,6 +1,14 @@
 #import "Classes/BLAppManager.h"
 #import "Classes/BLAppLegacyMerchant.h"
 
+#import <objc/runtime.h>
+ template <typename Type_>
+ static inline Type_ &MSHookIvar(id self, const char *name) {
+     Ivar ivar(class_getInstanceVariable(object_getClass(self), name));
+     void *pointer(ivar == NULL ? NULL : reinterpret_cast<char *>(self) + ivar_getOffset(ivar));
+     return *reinterpret_cast<Type_ *>(pointer);
+ }
+
 
 %hook ATVMerchantCoordinator
 
@@ -104,6 +112,58 @@
 	}
 	
 	return %orig;
+}
+
+- (void)wasBuried
+{
+	%orig;
+
+	[NSClassFromString(@"ATVSettingsFacade") initializePlatformFacade];
+	if ([[[NSClassFromString(@"ATVSettingsFacade") singleton] versionOS] isEqual:@"5.1.1"])
+	{
+		NSLog(@"[beigelist] will clean up main menu");
+
+		// get state of the GUI
+		id applianceID = nil;
+		id merchantID = nil;
+		id grid = MSHookIvar<id>(self, "_internetContentGrid");
+		if ([MSHookIvar<id>(self, "_containerView") focusedControl] == [grid parent])
+		{
+			int merchantIndex = [grid selectedIndex];
+			NSArray* merchants = [[grid dataSource] itemsForGrid:grid];
+			if (merchantIndex >= 0 && merchantIndex < [merchants count])
+				merchantID = [[merchants objectAtIndex:merchantIndex] identifier];
+		}
+		else
+		{
+			applianceID = [[[self focusedAppliance] applianceInfo] key];
+		}
+		NSLog(@"[beigelist] merchantID %@ applianceID %@", merchantID, applianceID);
+
+		// this seems to resolve memory issues
+		[self _reload];
+		
+		// restore state of the GUI
+		if (merchantID)
+		{
+			grid = MSHookIvar<id>(self, "_internetContentGrid");
+			NSArray* merchants = [[grid dataSource] itemsForGrid:grid];
+			for (int i = 0; i < [merchants count]; i++)
+			{
+				BRMerchant* merchant = [merchants objectAtIndex:i];
+				if ([[merchant identifier] isEqual:merchantID])
+				{
+					[MSHookIvar<id>(self, "_containerView") setFocusedControl:[grid parent]];
+					[grid setSelection: i];
+					break;
+				}
+			}
+		}
+		else if (applianceID)
+		{
+			[self focusApplianceWithIdentifier: applianceID];
+		}
+	}
 }
 
 %end

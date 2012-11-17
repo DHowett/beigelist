@@ -210,24 +210,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>8934C885162C09E400E41B6F</string>
+				<string>89C20956164B6D4C001D6F82</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>BLApplianceController.xm</string>
+				<string>BLAppLegacyMerchant.xm</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>8934C886162C09E400E41B6F</string>
+						<string>89C20957164B6D4C001D6F82</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>BLApplianceController.xm</string>
+						<string>BLAppLegacyMerchant.xm</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>8934CDE2162CBDCA00E41B6F</string>
+						<string>89C20958164B6D4C001D6F82</string>
 						<key>history</key>
 						<array>
-							<string>8934C882162C087B00E41B6F</string>
+							<string>89C207921648A577001D6F82</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -239,11 +239,51 @@
 			<key>Geometry</key>
 			<dict>
 				<key>Frame</key>
-				<string>{{0, 20}, {1374, 781}}</string>
+				<string>{{0, 20}, {1110, 781}}</string>
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>15 56 1374 822 0 0 1440 878 </string>
+				<string>15 56 1110 822 0 0 1440 878 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>8934CE16162CC26000E41B6F</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>queue.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>8934CE17162CC26000E41B6F</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>queue.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>89C20959164B6D4C001D6F82</string>
+						<key>history</key>
+						<array>
+							<string>8934CF5B162F9C9900E41B6F</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1365, 774}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>15 58 1365 815 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -279,6 +319,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -321,7 +363,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>7</integer>
+									<integer>5</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -371,7 +414,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8934CDE1162CBDCA00E41B6F</string>
+										<string>89C20952164B6D4C001D6F82</string>
 										<key>history</key>
 										<array>
 											<string>8957AFC51522F40800B3CDF2</string>
@@ -414,7 +457,7 @@
 											<string>897F4ED415E8CA1C00BFD639</string>
 											<string>894482B91627D65300FEF401</string>
 											<string>8934C817162C008E00E41B6F</string>
-											<string>8934CDDA162CBD2400E41B6F</string>
+											<string>8934CF59162F9C9900E41B6F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -428,18 +471,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1049, 315}}</string>
+								<string>{{0, 0}, {1049, 291}}</string>
 								<key>RubberWindowFrame</key>
 								<string>30 86 1361 792 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>315pt</string>
+							<string>291pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>409pt</string>
+							<string>433pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -453,9 +496,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1049, 382}}</string>
-										<key>RubberWindowFrame</key>
-										<string>30 86 1361 792 0 0 1440 878 </string>
+										<string>{{10, 27}, {1049, 406}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -471,7 +512,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1049, 298}}</string>
+										<string>{{10, 27}, {1049, 406}}</string>
+										<key>RubberWindowFrame</key>
+										<string>30 86 1361 792 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -537,11 +580,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>8934C7EB162BFF0700E41B6F</string>
+				<string>89C20953164B6D4C001D6F82</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>8934C7EC162BFF0700E41B6F</string>
+				<string>89C20954164B6D4C001D6F82</string>
 				<string>8957AAC51522929600B3CDF2</string>
-				<string>8934C7ED162BFF0700E41B6F</string>
+				<string>89C20955164B6D4C001D6F82</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -711,8 +754,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>8934CE16162CC26000E41B6F</string>
+		<string>89C20956164B6D4C001D6F82</string>
 		<string>/Users/kbradley/Projects/ATV2/beigelist/beigelist.xcodeproj</string>
-		<string>8934C885162C09E400E41B6F</string>
 	</array>
 	<key>WindowString</key>
 	<string>30 86 1361 792 0 0 1440 878 </string>

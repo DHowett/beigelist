@@ -57,33 +57,37 @@
 
 /*
  
- from blProperVersion - > BREventAction are all new for iOS 6
- 
  there is a new class called ATVNavigationBar that must need to be overriden differently per controller to determine whether to pop off, or to show the nav bar.
- without these modifications it will always show the nav bar now matter how far you are drilled down. There are two separate BRControllerStacks, one for the main menu
- controls and the BLApplianceController, and then one for the [[view] content] of said BRViewController (BLApplianceController inherits from there iirc)
  
- all i could think of to get this done at the root level was to grab this stack when menu is pressed in BREventAction and check the [[controllers] count] value for 1, if its
- 1 just return the default behavior (either pop up the navbar, or if the nav bar is up pop the full BLApplianceController off)
+ i initially used this code below, ( didnt always work ) to try and fix the issues here, instead if makes more sense just to have everyone fix their plugins directly 
+ since there is so much re-writing already needed for iOS 6. i personally added the following line to my prefix.pch in theos and now every time i want to push a controller i call
  
- there is one major problem with this, is doesnt appear to be UI thread safe or whatever, however if i try to gra the stack as illustrated in viewStack, everything locks up,
- if i dont (which i dont right now) the animation of popping off a controller looks really choppy and terrible. i used to have a versionCheck for 6.0+ in here but then 
- remebered we only run this on iOS 6 plus, so it was frivolous.
+ #define ROOT_STACK [[objc_getClass("BRApplicationStackManager") singleton] stack]
  
  
+ [ROOT_STACK pushController:myController]
  
+ rather than
+ 
+ [[self stack] pushController:myController]
+ 
+ a simple find and replace for [self stack] pushController with ROOT_CONTROLLER pushController should cover your entire project.
+ 
+ 
+
  
  */
 
+/*
 
 %new - (id)viewStack
 {
-	return [[[self view] content] stack];
+		return [[[self view] content] stack];
 	
 	
 	__block id stack = nil;
 	
-	dispatch_sync(dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 			// code below is executed synchronously
 			// access to UI is safe is its a main thread
 		stack = [[[self view] content] stack];
@@ -143,6 +147,9 @@
 	}
 	return YES;
 }
+
+ */
+
 
 - (void)wasPopped
 {
