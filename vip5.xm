@@ -9,6 +9,8 @@
      return *reinterpret_cast<Type_ *>(pointer);
  }
 
+static char const * const kBLMainMenuSelectedApplianceID = "kBLMainMenuSelectedApplianceID";
+static char const * const kBLMainMenuSelectedMerchantID = "kBLMainMenuSelectedMerchantID";
 
 %hook ATVMerchantCoordinator
 
@@ -114,36 +116,21 @@
 	return %orig;
 }
 
-- (void)wasBuried
+- (void)controlWasActivated
 {
-	%orig;
+    %orig;
 
 	[NSClassFromString(@"ATVSettingsFacade") initializePlatformFacade];
 	if ([[[NSClassFromString(@"ATVSettingsFacade") singleton] versionOS] isEqual:@"5.1.1"])
 	{
-		NSLog(@"[beigelist] will clean up main menu");
+    	NSString *applianceID = (NSString *)objc_getAssociatedObject(self, kBLMainMenuSelectedApplianceID);
+    	NSString *merchantID = (NSString *)objc_getAssociatedObject(self, kBLMainMenuSelectedMerchantID);
 
-		// get state of the GUI
-		id applianceID = nil;
-		id merchantID = nil;
-		id grid = MSHookIvar<id>(self, "_internetContentGrid");
-		if ([MSHookIvar<id>(self, "_containerView") focusedControl] == [grid parent])
-		{
-			int merchantIndex = [grid selectedIndex];
-			NSArray* merchants = [[grid dataSource] itemsForGrid:grid];
-			if (merchantIndex >= 0 && merchantIndex < [merchants count])
-				merchantID = [[merchants objectAtIndex:merchantIndex] identifier];
-		}
-		else
-		{
-			applianceID = [[[self focusedAppliance] applianceInfo] key];
-		}
 		NSLog(@"[beigelist] merchantID %@ applianceID %@", merchantID, applianceID);
 
-		// this seems to resolve memory issues
-		[self _reload];
-		
-		// restore state of the GUI
+    	// restore state of the GUI
+    	id grid = MSHookIvar<id>(self, "_internetContentGrid");
+    
 		if (merchantID)
 		{
 			grid = MSHookIvar<id>(self, "_internetContentGrid");
@@ -151,6 +138,7 @@
 			for (int i = 0; i < [merchants count]; i++)
 			{
 				BRMerchant* merchant = [merchants objectAtIndex:i];
+
 				if ([[merchant identifier] isEqual:merchantID])
 				{
 					[MSHookIvar<id>(self, "_containerView") setFocusedControl:[grid parent]];
@@ -160,9 +148,42 @@
 			}
 		}
 		else if (applianceID)
-		{
 			[self focusApplianceWithIdentifier: applianceID];
+	}
+}
+
+- (void)controlWasDeactivated
+{
+	%orig;
+
+	[NSClassFromString(@"ATVSettingsFacade") initializePlatformFacade];
+	if ([[[NSClassFromString(@"ATVSettingsFacade") singleton] versionOS] isEqual:@"5.1.1"])
+	{
+		NSLog(@"[beigelist] will clean up main menu");
+
+		// state of the GUI
+		NSString* applianceID = nil;
+		NSString* merchantID = nil;
+
+		id grid = MSHookIvar<id>(self, "_internetContentGrid");
+		if ([MSHookIvar<id>(self, "_containerView") focusedControl] == [grid parent])
+		{
+			int merchantIndex = [grid selectedIndex];
+			NSArray* merchants = [[grid dataSource] itemsForGrid:grid];
+
+			if (merchantIndex >= 0 && merchantIndex < [merchants count])
+				merchantID = [[merchants objectAtIndex:merchantIndex] identifier];
 		}
+		else
+		{
+			applianceID = [[[self focusedAppliance] applianceInfo] key];
+		}
+
+		objc_setAssociatedObject(self, kBLMainMenuSelectedApplianceID, applianceID, OBJC_ASSOCIATION_RETAIN);
+		objc_setAssociatedObject(self, kBLMainMenuSelectedMerchantID, merchantID, OBJC_ASSOCIATION_RETAIN);
+
+		// this seems to resolve memory issues
+		[self _reload];
 	}
 }
 
