@@ -157,7 +157,7 @@
                 //add another key, if it doesnt exist, revert to preferred order... DURR
 				
                 NSNumber *preferredOrder = [frappBundleInfoDict objectForKey:kBLPreferedOrder];
-				BOOL *forceLegacyNav = [[frappBundleInfoDict objectForKey:kBLForceLegacyNav] boolValue];
+				BOOL forceLegacyNav = [[frappBundleInfoDict objectForKey:kBLForceLegacyNav] boolValue];
 				if (!preferredOrder)
 				{
 					preferredOrder = [frappBundleInfoDict objectForKey: @"FRAppliancePreferedOrderValue"];

@@ -83,8 +83,9 @@
 		[legacyAppliance release];
 		legacyAppliance = nil;
 		//NSLog(@"applianceInfo == nil");
-		(BLAppLegacyCategoryController*)controller = [[[BLAppLegacyCategoryController alloc] init] autorelease];
-		[controller setListTitle: [self title]];
+		//(BLAppLegacyCategoryController*)controller = [[[BLAppLegacyCategoryController alloc] init] autorelease];
+		controller = [[[BLAppLegacyCategoryController alloc] init] autorelease];
+        [controller setListTitle: [self title]];
 		BRBaseAppliance *legacyAppliance = [[[_legacyApplianceClass alloc] init] autorelease];
 		[controller setLegacyAppliance: legacyAppliance];
 		

@@ -1,7 +1,6 @@
 #import "AppleTV.h"
 //#import "Classes6/BLAppLegacyMerchant.h"
 
-static BOOL _forceLegacyNav;
 
 %subclass BLAppLegacyMerchant: ATVMerchant
 
@@ -11,6 +10,7 @@ static BOOL _forceLegacyNav;
 	static char const * const legacyApplianceClassKey = "LegacyApplianceClass";
 	static char const * const showInTopRowKey = "showInTopRow";
 	static char const * const presentedInTopRowKey = "presentedInTopRow";
+	static char const * const forceLegacyNav = "forceLegacyNav";
 
 
 
@@ -85,11 +85,15 @@ static BOOL _forceLegacyNav;
  */
 	
 
-	if ([legacyAppliance applianceInfo] != nil && _forceLegacyNav == FALSE)
+	if ([legacyAppliance applianceInfo] != nil && [self forceLegacyNav] == FALSE)
 	{
 	//	NSLog(@"legacyApplianceinfo: %@", [legacyAppliance applianceInfo]);
-		[[BRAPPMAN singleton] _applianceDidReloadCategories:legacyAppliance];
-		controller = [[[%c(BLApplianceController) alloc] initWithAppliance:legacyAppliance] autorelease];
+		
+		if ([[BRAPPMAN singleton] respondsToSelector:@selector(_applianceDidReloadCategories:)])
+        {
+            [[BRAPPMAN singleton] _applianceDidReloadCategories:legacyAppliance];
+        }
+        controller = [[[%c(BLApplianceController) alloc] initWithAppliance:legacyAppliance] autorelease];
 		[legacyAppliance autorelease];
 	
 	} else {
@@ -120,9 +124,10 @@ static BOOL _forceLegacyNav;
 
 
 %new - (BOOL)forceLegacyNav
-{ return _forceLegacyNav; }
+{ return [objc_getAssociatedObject(self, forceLegacyNav) boolValue]; }
 %new - (void)setForceLegacyNav:(BOOL)value 
-{ _forceLegacyNav = value; }
+{ objc_setAssociatedObject(self, forceLegacyNav, [NSNumber numberWithBool:value], OBJC_ASSOCIATION_RETAIN_NONATOMIC); }
+
 %new - (NSString *) title
 { return [[self info] menuTitle]; }
 %new - (void) setTitle: (NSString *) title

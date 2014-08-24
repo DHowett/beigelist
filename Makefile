@@ -1,6 +1,6 @@
 GO_EASY_ON_ME=1
-#export THEOS_DEVICE_IP=apple-tv.local
-export THEOS_DEVICE_IP=testtv.local
+export THEOS_DEVICE_IP=apple-tv.local
+#export THEOS_DEVICE_IP=testtv.local
 include theos/makefiles/common.mk
 
 TWEAK_NAME = beigelist beigelist5 beigelist6 0bacon

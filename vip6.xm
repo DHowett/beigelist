@@ -1,5 +1,15 @@
 #import "Classes/BLAppManager.h"
 
+%hook BRIPConfiguration
+
++ (BOOL)internetServerReachable:(id)reachable
+{
+    NSLog(@"reachable class: %@", NSStringFromClass([reachable class]));
+    NSLog(@"reachable: %@", reachable);
+    return %orig;
+}
+
+%end
 
 %hook ATVMerchantCoordinator
 
@@ -11,7 +21,7 @@
  in 6.0 this is not enough, this is a super hacky workaround to get our appliances loaded in. I override enabledMerchants to get it on the main screen, and then when 
  - (id)rootControllerForMerchantIdentifier:(id)merchantIdentifier is called it references merchantWithIdentifier. which will be explained below
  
-
+ 
  ugh so i've tried everything i can think of, orderedMerchantIdentifiers don't see to ever be used in any useful fashion (re - loading) 
  
  the _enabledMerchantsFilterPredicate doesnt appear lend any help either (@'enabled == 1 AND info.loaded-via-addsite != 1 AND identifier != "internet-add-site"')
@@ -21,23 +31,40 @@
 	//applianceIdentifiers
 
 /*
+ 
+ - (NSArray *)orderedMerchantIdentifiers 
+ {
+ %log;
+ NSArray *merchantsIDs = %orig;
+ id sharedAppManager = [BLAppManager sharedAppManager];
+ NSArray *applianceMerchants = [sharedAppManager applianceIdentifiers];
+ 
+ NSMutableArray *returnArray = [NSMutableArray array];
+ [returnArray addObjectsFromArray: applianceMerchants];
+ [returnArray addObjectsFromArray: merchantsIDs];
+ 
+ return returnArray;
+ }
+ 
+ 
+ - (id)enabledMerchants 
+ {
+ //%log;
+ NSArray *merchants = %orig;
+ id sharedAppManager = [BLAppManager sharedAppManager];
+ NSArray *applianceMerchants = [sharedAppManager appliances];
+ 
+ NSMutableArray *returnArray = [NSMutableArray array];
+ [returnArray addObjectsFromArray: applianceMerchants];
+ [returnArray addObjectsFromArray: merchants];
+ 
+ 
+ return returnArray;
+ }
+ 
+ */
 
-- (NSArray *)orderedMerchantIdentifiers 
-{
-	%log;
-	NSArray *merchantsIDs = %orig;
-	id sharedAppManager = [BLAppManager sharedAppManager];
-	NSArray *applianceMerchants = [sharedAppManager applianceIdentifiers];
-	
-	NSMutableArray *returnArray = [NSMutableArray array];
-    [returnArray addObjectsFromArray: applianceMerchants];
-	[returnArray addObjectsFromArray: merchantsIDs];
-	
-	return returnArray;
-}
-
-
-- (id)enabledMerchants 
+- (id)allMerchants //having both allMerchants and enabledMerchants doesn't really seem to help, enabledMerchants is a necessity to edit
 {
 		//%log;
 	NSArray *merchants = %orig;
@@ -49,23 +76,6 @@
 	[returnArray addObjectsFromArray: merchants];
 	
 	
-    return returnArray;
-}
-
- */
-
-- (id)allMerchants //having both allMerchants and enabledMerchants doesn't really seem to help, enabledMerchants is a necessity to edit
-{
-	//%log;
-	NSArray *merchants = %orig;
-	id sharedAppManager = [BLAppManager sharedAppManager];
-	NSArray *applianceMerchants = [sharedAppManager appliances];
-	
-	NSMutableArray *returnArray = [NSMutableArray array];
-    [returnArray addObjectsFromArray: applianceMerchants];
-	[returnArray addObjectsFromArray: merchants];
-	
-
     return returnArray;
 }
 
@@ -86,28 +96,28 @@
 	[returnArray addObjectsFromArray: merchants];
 	[returnArray addObjectsFromArray: applianceMerchants];
 	return returnArray;
-
-}
 	
+}
 
-//- (id)allMerchants
-//{
-//	NSArray *merchants = %orig;
-//	NSMutableArray *applianceMerchants = [NSMutableArray arrayWithArray:[[BLAppManager sharedAppManager] appliances]];
-//	
-//	for (int i = [applianceMerchants count] - 1; i >= 0; i--)
-//	{
-//		id merchant = [applianceMerchants objectAtIndex:i];
-//		if ([merchant presentedInTopRow])
-//			[applianceMerchants removeObjectAtIndex:i];
-//	}
-//    
-//	NSMutableArray *returnArray = [NSMutableArray array];
-//	[returnArray addObjectsFromArray: merchants];
-//	[returnArray addObjectsFromArray: applianceMerchants];
-//	
-//	return returnArray;
-//}
+
+	//- (id)allMerchants
+	//{
+	//	NSArray *merchants = %orig;
+	//	NSMutableArray *applianceMerchants = [NSMutableArray arrayWithArray:[[BLAppManager sharedAppManager] appliances]];
+	//	
+	//	for (int i = [applianceMerchants count] - 1; i >= 0; i--)
+	//	{
+	//		id merchant = [applianceMerchants objectAtIndex:i];
+	//		if ([merchant presentedInTopRow])
+	//			[applianceMerchants removeObjectAtIndex:i];
+	//	}
+	//    
+	//	NSMutableArray *returnArray = [NSMutableArray array];
+	//	[returnArray addObjectsFromArray: merchants];
+	//	[returnArray addObjectsFromArray: applianceMerchants];
+	//	
+	//	return returnArray;
+	//}
 
 /*
  
@@ -140,6 +150,27 @@
 	return %orig;
 }
 
++ (void)sortMerchantsArray:(NSMutableArray*)array
+{
+	%orig;
+	
+	NSMutableArray* sorted = [NSMutableArray array];
+	NSArray* tmpArr = [array copy];
+	for (id merc in tmpArr)
+	{
+		if (![merc isKindOfClass:NSClassFromString(@"BLAppLegacyMerchant")])
+		{
+			[sorted addObject:merc];
+			[array removeObject:merc];
+		}
+	}
+	[tmpArr release];
+	
+	NSSortDescriptor* sd = [NSSortDescriptor sortDescriptorWithKey:@"preferredOrder" ascending:YES];
+	[array sortUsingDescriptors:[NSArray arrayWithObject:sd]];
+	[array addObjectsFromArray:sorted];
+}
+
 %end
 
 	//FALSE;
@@ -147,7 +178,11 @@
 
 %hook BRApplianceManager
 
-
+- (void)_handleStoreMenusDidChangeNotification:(id)_handleStoreMenus
+{
+    %log;
+    %orig;
+}
 
 - (void)loadAppliances
 {
@@ -160,9 +195,13 @@
 	{
 		if ([merchant showInTopRow])
 		{
-			[[objc_getClass("BRApplianceManager") singleton] _applianceDidReloadCategories:[merchant applianceInstance]];
-		}
+            if ([[objc_getClass("BRApplianceManager") singleton] respondsToSelector:@selector(_applianceDidReloadCategories:)])
+            {
+                [[objc_getClass("BRApplianceManager") singleton] _applianceDidReloadCategories:[merchant applianceInstance]];
+            }
 			
+		}
+		
 	}
 }
 
@@ -198,8 +237,8 @@
 			}
 		}
 	}
-
-
+	
+	
 	
 }
 
@@ -211,6 +250,17 @@
 	NSArray *applianceMerchants = [[BLAppManager sharedAppManager] appliances];
 	BOOL changed = NO;
 	
+		// remove appliances which should never appear in the top row
+	for (int i = [appliances count] - 1; i >= 0; i--)
+	{
+		for (id merchant in applianceMerchants)
+		{
+			if ([appliances objectAtIndex:i] == [merchant applianceInstance] && ![merchant showInTopRow])
+				[appliances removeObjectAtIndex:i];
+		}
+	}
+	
+		// for appliances which can appear in the top row we leave only 5 of them
 	for (int i = [appliances count] - 1; i >= 0; i--)
 	{
 		for (id merchant in applianceMerchants)
@@ -218,7 +268,7 @@
 			if ([appliances objectAtIndex:i] == [merchant applianceInstance] && [merchant showInTopRow])
 			{
 				BOOL show = (BOOL)(long)(void *)[merchant presentedInTopRow];
-			
+				
 				if ([appliances count] > 5)
 				{
 					[appliances removeObjectAtIndex:i];
@@ -226,6 +276,7 @@
 				}
 				else
 					[merchant setPresentedInTopRow:YES];
+				
 				if (show != (BOOL)(long)(void *)[merchant presentedInTopRow])
 					changed = YES;
 			}
@@ -238,8 +289,12 @@
 		{
 			[[NSClassFromString(@"ATVMerchantCoordinator") singleton] _updateMerchants];	
 		} else {
-			[[NSClassFromString(@"ATVMerchantCoordinator") sharedInstance] _updateMerchantServices];
-			
+            if ([[NSClassFromString(@"ATVMerchantCoordinator") sharedInstance] respondsToSelector:@selector(_updateMerchantsWithCompletionHandler:)])
+            {
+                [[NSClassFromString(@"ATVMerchantCoordinator") sharedInstance] _updateMerchantsWithCompletionHandler:NULL];
+			} else {
+                [[NSClassFromString(@"ATVMerchantCoordinator") sharedInstance] _updateMerchants];
+            }
 		}
 		
 	}
@@ -288,8 +343,8 @@
 %ctor {
 	NSLog( @"beigelist6 (beigelist6-%s) loaded.", VERSION);
 	%init;
-
-
-	//[[NSClassFromString(@"BLAppManager") sharedAppManager] loadAppliances]; //can't do it here anymore! classes aren't available yet.
+	
+	
+		//[[NSClassFromString(@"BLAppManager") sharedAppManager] loadAppliances]; //can't do it here anymore! classes aren't available yet.
 	
 }
