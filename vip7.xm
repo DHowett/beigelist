@@ -350,7 +350,7 @@
 
 %class ATVMerchantCoordinator
 %ctor {
-	NSLog( @"beigelist6 (beigelist6-%s) loaded.", VERSION);
+	NSLog( @"beigelist7 (beigelist7-%s) loaded.", VERSION);
 	%init;
 	
 	
