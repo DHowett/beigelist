@@ -1,6 +1,7 @@
 GO_EASY_ON_ME=1
 export THEOS_DEVICE_IP=apple-tv.local
 #export THEOS_DEVICE_IP=testtv.local
+#export THEOS_DEVICE_IP=192.168.0.6
 export SDKVERSION=8.0
 include theos/makefiles/common.mk
 
