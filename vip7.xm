@@ -12,6 +12,73 @@
 
 %end
 
+%hook BRApplication
+
+%new -(void)setFirstResponder:(id)firstResponder
+{
+    %log;
+    [self setFirstBRResponder:firstResponder];
+}
+
+%end
+
+%hook ATVSettingsFacade
+
+%new -(void)flushDiskChanges
+{
+    %log;
+}
+
+%end
+
+/*
+%hook ATVMerchantAppliance
+
+- (id)initWithApplianceInfo:(id)applianceInfo	// 0x1a01ed
+{
+    %log;
+    return %orig;
+}
+//- (void).cxx_destruct;	// 0x1a03d1
+- (id)applianceCategories	// 0x1a0261
+{
+    %log;
+    return %orig;
+}
+- (id)applianceController	// 0x1a0339
+{
+    %log;
+    return %orig;
+}
+// declared property getter: - (id)applianceInfo;	// 0x1a024d
+- (id)controllerForIdentifier:(id)identifier args:(id)args	// 0x1a0285
+{
+    %log;
+    return %orig;
+}
+- (BOOL)handlePlay:(id)play userInfo:(id)info	// 0x1a03cd
+{
+    %log;
+    return %orig;
+}
+- (id)identifierForContentAlias:(id)contentAlias{
+    %log;
+    return %orig;
+}	// 0x1a0281
+- (void)invalidateCategories
+{
+    %log;
+    %orig;
+}// 0x1a027d
+- (id)topShelfController
+{
+    %log;
+    return %orig;
+}// 0x1a0289
+
+%end
+*/
+
 %hook ATVMerchantCoordinator
 
 @class BLAppManager;
@@ -299,7 +366,7 @@
 			}
 		}
 	}
-	
+
 	if (changed)
 	{
 		id mmController = [NSClassFromString(@"ATVMainMenuController") mainMenu];

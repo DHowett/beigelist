@@ -30,5 +30,5 @@
 - (void) clearAppliances;
 - (void) reloadAppliances;
 - (void) loadAppliances;
-
+- (id)builtInPluginForApplianceIdentifier:(NSString *)applianceID;
 @end

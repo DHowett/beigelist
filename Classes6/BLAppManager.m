@@ -188,6 +188,20 @@
     _appliancesLoaded = YES;
 }
 
+- (id)builtInPluginForApplianceIdentifier:(NSString *)applianceID
+{
+    id singleton = [objc_getClass("BRApplianceManager") singleton];
+    NSArray *applianceInfoList = [singleton applianceInfoList];
+    for (id applianceInfo in applianceInfoList)
+    {
+        NSString *appID = [applianceInfo key];
+        if ([appID isEqualToString:applianceID])
+        {
+           return [singleton _applianceForInfo:applianceInfo];
+        }
+    }
+    return nil;
+}
 
 #pragma mark -
 #pragma mark Public Methods

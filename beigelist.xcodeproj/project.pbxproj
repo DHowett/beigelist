@@ -30,6 +30,7 @@
 		898F105E15B7CA9B0014433F /* BLAppMerchantInfo.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105815B7CA9B0014433F /* BLAppMerchantInfo.xm */; };
 		898F11B115B7F9080014433F /* vip6.xm in Resources */ = {isa = PBXBuildFile; fileRef = 898F11B015B7F9080014433F /* vip6.xm */; };
 		89D7EC0B1A2BD24F00E08B38 /* vip7.xm in Resources */ = {isa = PBXBuildFile; fileRef = 89D7EC0A1A2BD24F00E08B38 /* vip7.xm */; };
+		89D7EC0D1A2BE6D300E08B38 /* beigelist7.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89D7EC0C1A2BE6D300E08B38 /* beigelist7.plist */; };
 		8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */; };
 		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -44,7 +45,7 @@
 		8957AAD4152292E400B3CDF2 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		8957AAD5152292E400B3CDF2 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		8957AAD6152292E400B3CDF2 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		8957AAD7152292E400B3CDF2 /* vip2.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vip2.xm; sourceTree = "<group>"; };
+		8957AAD7152292E400B3CDF2 /* vip2.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = vip2.xm; sourceTree = "<group>"; };
 		8957AAE3152293C200B3CDF2 /* BLAppLegacyCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppLegacyCategoryController.h; sourceTree = "<group>"; };
 		8957AAE4152293C200B3CDF2 /* BLAppLegacyCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAppLegacyCategoryController.m; sourceTree = "<group>"; };
 		8957AAE5152293C200B3CDF2 /* BLAppLegacyMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppLegacyMerchant.h; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		898F105815B7CA9B0014433F /* BLAppMerchantInfo.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BLAppMerchantInfo.xm; sourceTree = "<group>"; };
 		898F11B015B7F9080014433F /* vip6.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = vip6.xm; sourceTree = "<group>"; };
 		89D7EC0A1A2BD24F00E08B38 /* vip7.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = vip7.xm; sourceTree = "<group>"; };
+		89D7EC0C1A2BE6D300E08B38 /* beigelist7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = beigelist7.plist; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* beigelist.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beigelist.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 				8957AAD0152292E400B3CDF2 /* control */,
 				8957AAD1152292E400B3CDF2 /* example_listener */,
 				8957AAD5152292E400B3CDF2 /* Makefile */,
+				89D7EC0C1A2BE6D300E08B38 /* beigelist7.plist */,
 				8957AAD6152292E400B3CDF2 /* README */,
 				8957AAD7152292E400B3CDF2 /* vip2.xm */,
 				89684A7715D9BECD00A7E24E /* beigelist.plist */,
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D7EC0B1A2BD24F00E08B38 /* vip7.xm in Resources */,
+				89D7EC0D1A2BE6D300E08B38 /* beigelist7.plist in Resources */,
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
 				8957AAD8152292E400B3CDF2 /* bacon.xm in Resources */,
 				8957AAD9152292E400B3CDF2 /* control in Resources */,
