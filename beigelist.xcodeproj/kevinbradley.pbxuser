@@ -1,0 +1,46 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeTarget = 8D57630D048677EA00EA77CD /* beigelist */;
+		codeSenseManager = 320134F41522AC6000C039E6 /* Code sense */;
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 354593857;
+			PBXWorkspaceStateSaveDate = 354593857;
+		};
+		sourceControlManager = 320134F31522AC6000C039E6 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	320134F31522AC6000C039E6 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	320134F41522AC6000C039E6 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	8957AAE3152293C200B3CDF2 /* BLAppLegacyCategoryController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {881, 368}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 287}";
+		};
+	};
+	8957AB3B15229B5100B3CDF2 /* AppleTV.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {881, 14880}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 421}";
+		};
+	};
+	8D57630D048677EA00EA77CD /* beigelist */ = {
+		activeExec = 0;
+	};
+}

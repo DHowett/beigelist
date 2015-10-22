@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8957AAD8152292E400B3CDF2 /* bacon.xm in Resources */ = {isa = PBXBuildFile; fileRef = 8957AACE152292E400B3CDF2 /* bacon.xm */; };
+		8957AAD9152292E400B3CDF2 /* control in Resources */ = {isa = PBXBuildFile; fileRef = 8957AAD0152292E400B3CDF2 /* control */; };
+		8957AADB152292E400B3CDF2 /* listener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAD3152292E400B3CDF2 /* listener.mm */; };
+		8957AADC152292E400B3CDF2 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAD4152292E400B3CDF2 /* Makefile */; };
+		8957AADD152292E400B3CDF2 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAD5152292E400B3CDF2 /* Makefile */; };
+		8957AADE152292E400B3CDF2 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 8957AAD6152292E400B3CDF2 /* README */; };
+		8957AADF152292E400B3CDF2 /* vip2.xm in Resources */ = {isa = PBXBuildFile; fileRef = 8957AAD7152292E400B3CDF2 /* vip2.xm */; };
+		8957AAEC152293C200B3CDF2 /* BLAppLegacyCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAE4152293C200B3CDF2 /* BLAppLegacyCategoryController.m */; };
+		8957AAED152293C200B3CDF2 /* BLAppLegacyMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAE6152293C200B3CDF2 /* BLAppLegacyMerchant.m */; };
+		8957AAEE152293C200B3CDF2 /* BLAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAE8152293C200B3CDF2 /* BLAppManager.m */; };
+		8957AAEF152293C200B3CDF2 /* BLAppMerchantInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957AAEA152293C200B3CDF2 /* BLAppMerchantInfo.m */; };
+		89684A7615D9BEBE00A7E24E /* 0bacon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89684A7515D9BEBE00A7E24E /* 0bacon.plist */; };
+		89684A7A15D9BECD00A7E24E /* beigelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89684A7715D9BECD00A7E24E /* beigelist.plist */; };
+		89684A7B15D9BECD00A7E24E /* beigelist5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89684A7815D9BECD00A7E24E /* beigelist5.plist */; };
+		89684A7C15D9BECD00A7E24E /* beigelist6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89684A7915D9BECD00A7E24E /* beigelist6.plist */; };
+		898F104715B7C92F0014433F /* vip5.xm in Resources */ = {isa = PBXBuildFile; fileRef = 898F104615B7C92F0014433F /* vip5.xm */; };
+		898F105A15B7CA9B0014433F /* BLAppLegacyCategoryController.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105015B7CA9B0014433F /* BLAppLegacyCategoryController.xm */; };
+		898F105B15B7CA9B0014433F /* BLAppLegacyMerchant.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */; };
+		898F105C15B7CA9B0014433F /* BLApplianceController.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105415B7CA9B0014433F /* BLApplianceController.xm */; };
+		898F105D15B7CA9B0014433F /* BLAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F105615B7CA9B0014433F /* BLAppManager.m */; };
+		898F105E15B7CA9B0014433F /* BLAppMerchantInfo.xm in Sources */ = {isa = PBXBuildFile; fileRef = 898F105815B7CA9B0014433F /* BLAppMerchantInfo.xm */; };
+		898F11B115B7F9080014433F /* vip6.xm in Resources */ = {isa = PBXBuildFile; fileRef = 898F11B015B7F9080014433F /* vip6.xm */; };
+		89D7EC0B1A2BD24F00E08B38 /* vip7.xm in Resources */ = {isa = PBXBuildFile; fileRef = 89D7EC0A1A2BD24F00E08B38 /* vip7.xm */; };
+		89D7EC0D1A2BE6D300E08B38 /* beigelist7.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89D7EC0C1A2BE6D300E08B38 /* beigelist7.plist */; };
+		8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */; };
+		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		8957AACE152292E400B3CDF2 /* bacon.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = bacon.xm; sourceTree = "<group>"; };
+		8957AACF152292E400B3CDF2 /* Beigelist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beigelist.h; sourceTree = "<group>"; };
+		8957AAD0152292E400B3CDF2 /* control */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		8957AAD3152292E400B3CDF2 /* listener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = listener.mm; sourceTree = "<group>"; };
+		8957AAD4152292E400B3CDF2 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		8957AAD5152292E400B3CDF2 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		8957AAD6152292E400B3CDF2 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		8957AAD7152292E400B3CDF2 /* vip2.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = vip2.xm; sourceTree = "<group>"; };
+		8957AAE3152293C200B3CDF2 /* BLAppLegacyCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppLegacyCategoryController.h; sourceTree = "<group>"; };
+		8957AAE4152293C200B3CDF2 /* BLAppLegacyCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAppLegacyCategoryController.m; sourceTree = "<group>"; };
+		8957AAE5152293C200B3CDF2 /* BLAppLegacyMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppLegacyMerchant.h; sourceTree = "<group>"; };
+		8957AAE6152293C200B3CDF2 /* BLAppLegacyMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAppLegacyMerchant.m; sourceTree = "<group>"; };
+		8957AAE7152293C200B3CDF2 /* BLAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppManager.h; sourceTree = "<group>"; };
+		8957AAE8152293C200B3CDF2 /* BLAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAppManager.m; sourceTree = "<group>"; };
+		8957AAE9152293C200B3CDF2 /* BLAppMerchantInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppMerchantInfo.h; sourceTree = "<group>"; };
+		8957AAEA152293C200B3CDF2 /* BLAppMerchantInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAppMerchantInfo.m; sourceTree = "<group>"; };
+		8957AAEB152293C200B3CDF2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8957AB711522D7EC00B3CDF2 /* AppleTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleTV.h; sourceTree = SOURCE_ROOT; };
+		8957B6EE1523DFCA00B3CDF2 /* AppleTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleTV.framework; path = ../../../FIVE_POINT_OH/Hoodoo9B179b.K66OS/PrivateFrameworks/AppleTV.framework; sourceTree = SOURCE_ROOT; };
+		89684A7515D9BEBE00A7E24E /* 0bacon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = 0bacon.plist; sourceTree = "<group>"; };
+		89684A7715D9BECD00A7E24E /* beigelist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = beigelist.plist; sourceTree = "<group>"; };
+		89684A7815D9BECD00A7E24E /* beigelist5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = beigelist5.plist; sourceTree = "<group>"; };
+		89684A7915D9BECD00A7E24E /* beigelist6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = beigelist6.plist; sourceTree = "<group>"; };
+		898F104615B7C92F0014433F /* vip5.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = vip5.xm; sourceTree = "<group>"; };
+		898F104E15B7CA9B0014433F /* AppleTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleTV.h; sourceTree = "<group>"; };
+		898F104F15B7CA9B0014433F /* BLAppLegacyCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppLegacyCategoryController.h; sourceTree = "<group>"; };
+		898F105015B7CA9B0014433F /* BLAppLegacyCategoryController.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BLAppLegacyCategoryController.xm; sourceTree = "<group>"; };
+		898F105115B7CA9B0014433F /* BLAppLegacyMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppLegacyMerchant.h; sourceTree = "<group>"; };
+		898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BLAppLegacyMerchant.xm; sourceTree = "<group>"; };
+		898F105315B7CA9B0014433F /* BLApplianceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLApplianceController.h; sourceTree = "<group>"; };
+		898F105415B7CA9B0014433F /* BLApplianceController.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BLApplianceController.xm; sourceTree = "<group>"; };
+		898F105515B7CA9B0014433F /* BLAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppManager.h; sourceTree = "<group>"; };
+		898F105615B7CA9B0014433F /* BLAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAppManager.m; sourceTree = "<group>"; };
+		898F105715B7CA9B0014433F /* BLAppMerchantInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAppMerchantInfo.h; sourceTree = "<group>"; };
+		898F105815B7CA9B0014433F /* BLAppMerchantInfo.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BLAppMerchantInfo.xm; sourceTree = "<group>"; };
+		898F11B015B7F9080014433F /* vip6.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = vip6.xm; sourceTree = "<group>"; };
+		89D7EC0A1A2BD24F00E08B38 /* vip7.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = vip7.xm; sourceTree = "<group>"; };
+		89D7EC0C1A2BE6D300E08B38 /* beigelist7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = beigelist7.plist; sourceTree = "<group>"; };
+		8D576316048677EA00EA77CD /* beigelist.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beigelist.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D576313048677EA00EA77CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* beigelist */ = {
+			isa = PBXGroup;
+			children = (
+				8957B6EE1523DFCA00B3CDF2 /* AppleTV.framework */,
+				898F104D15B7CA9B0014433F /* Classes6 */,
+				8957AAE2152293C200B3CDF2 /* Classes */,
+				08FB77AFFE84173DC02AAC07 /* Source */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
+				19C28FB6FE9D52B211CA2CBB /* Products */,
+			);
+			name = beigelist;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D576317048677EA00EA77CD /* Info.plist */,
+				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				89684A7515D9BEBE00A7E24E /* 0bacon.plist */,
+				89D7EC0A1A2BD24F00E08B38 /* vip7.xm */,
+				898F11B015B7F9080014433F /* vip6.xm */,
+				898F104615B7C92F0014433F /* vip5.xm */,
+				8957AACE152292E400B3CDF2 /* bacon.xm */,
+				8957AACF152292E400B3CDF2 /* Beigelist.h */,
+				8957AAD0152292E400B3CDF2 /* control */,
+				8957AAD1152292E400B3CDF2 /* example_listener */,
+				8957AAD5152292E400B3CDF2 /* Makefile */,
+				89D7EC0C1A2BE6D300E08B38 /* beigelist7.plist */,
+				8957AAD6152292E400B3CDF2 /* README */,
+				8957AAD7152292E400B3CDF2 /* vip2.xm */,
+				89684A7715D9BECD00A7E24E /* beigelist.plist */,
+				89684A7815D9BECD00A7E24E /* beigelist5.plist */,
+				89684A7915D9BECD00A7E24E /* beigelist6.plist */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		19C28FB6FE9D52B211CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D576316048677EA00EA77CD /* beigelist.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8957AAD1152292E400B3CDF2 /* example_listener */ = {
+			isa = PBXGroup;
+			children = (
+				8957AAD3152292E400B3CDF2 /* listener.mm */,
+				8957AAD4152292E400B3CDF2 /* Makefile */,
+			);
+			path = example_listener;
+			sourceTree = "<group>";
+		};
+		8957AAE2152293C200B3CDF2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8957AB711522D7EC00B3CDF2 /* AppleTV.h */,
+				8957AAE3152293C200B3CDF2 /* BLAppLegacyCategoryController.h */,
+				8957AAE4152293C200B3CDF2 /* BLAppLegacyCategoryController.m */,
+				8957AAE5152293C200B3CDF2 /* BLAppLegacyMerchant.h */,
+				8957AAE6152293C200B3CDF2 /* BLAppLegacyMerchant.m */,
+				8957AAE7152293C200B3CDF2 /* BLAppManager.h */,
+				8957AAE8152293C200B3CDF2 /* BLAppManager.m */,
+				8957AAE9152293C200B3CDF2 /* BLAppMerchantInfo.h */,
+				8957AAEA152293C200B3CDF2 /* BLAppMerchantInfo.m */,
+				8957AAEB152293C200B3CDF2 /* main.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		898F104D15B7CA9B0014433F /* Classes6 */ = {
+			isa = PBXGroup;
+			children = (
+				898F104E15B7CA9B0014433F /* AppleTV.h */,
+				898F104F15B7CA9B0014433F /* BLAppLegacyCategoryController.h */,
+				898F105015B7CA9B0014433F /* BLAppLegacyCategoryController.xm */,
+				898F105115B7CA9B0014433F /* BLAppLegacyMerchant.h */,
+				898F105215B7CA9B0014433F /* BLAppLegacyMerchant.xm */,
+				898F105315B7CA9B0014433F /* BLApplianceController.h */,
+				898F105415B7CA9B0014433F /* BLApplianceController.xm */,
+				898F105515B7CA9B0014433F /* BLAppManager.h */,
+				898F105615B7CA9B0014433F /* BLAppManager.m */,
+				898F105715B7CA9B0014433F /* BLAppMerchantInfo.h */,
+				898F105815B7CA9B0014433F /* BLAppMerchantInfo.xm */,
+			);
+			path = Classes6;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D57630D048677EA00EA77CD /* beigelist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB911A08733D790010E9CD /* Build configuration list for PBXNativeTarget "beigelist" */;
+			buildPhases = (
+				8D57630F048677EA00EA77CD /* Resources */,
+				8D576311048677EA00EA77CD /* Sources */,
+				8D576313048677EA00EA77CD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = beigelist;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = beigelist;
+			productReference = 8D576316048677EA00EA77CD /* beigelist.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 1DEB911E08733D790010E9CD /* Build configuration list for PBXProject "beigelist" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* beigelist */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D57630D048677EA00EA77CD /* beigelist */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D57630F048677EA00EA77CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D7EC0B1A2BD24F00E08B38 /* vip7.xm in Resources */,
+				89D7EC0D1A2BE6D300E08B38 /* beigelist7.plist in Resources */,
+				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
+				8957AAD8152292E400B3CDF2 /* bacon.xm in Resources */,
+				8957AAD9152292E400B3CDF2 /* control in Resources */,
+				8957AADE152292E400B3CDF2 /* README in Resources */,
+				8957AADF152292E400B3CDF2 /* vip2.xm in Resources */,
+				898F104715B7C92F0014433F /* vip5.xm in Resources */,
+				898F11B115B7F9080014433F /* vip6.xm in Resources */,
+				89684A7615D9BEBE00A7E24E /* 0bacon.plist in Resources */,
+				89684A7A15D9BECD00A7E24E /* beigelist.plist in Resources */,
+				89684A7B15D9BECD00A7E24E /* beigelist5.plist in Resources */,
+				89684A7C15D9BECD00A7E24E /* beigelist6.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D576311048677EA00EA77CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8957AADB152292E400B3CDF2 /* listener.mm in Sources */,
+				8957AADC152292E400B3CDF2 /* Makefile in Sources */,
+				8957AADD152292E400B3CDF2 /* Makefile in Sources */,
+				8957AAEC152293C200B3CDF2 /* BLAppLegacyCategoryController.m in Sources */,
+				8957AAED152293C200B3CDF2 /* BLAppLegacyMerchant.m in Sources */,
+				8957AAEE152293C200B3CDF2 /* BLAppManager.m in Sources */,
+				8957AAEF152293C200B3CDF2 /* BLAppMerchantInfo.m in Sources */,
+				898F105A15B7CA9B0014433F /* BLAppLegacyCategoryController.xm in Sources */,
+				898F105B15B7CA9B0014433F /* BLAppLegacyMerchant.xm in Sources */,
+				898F105C15B7CA9B0014433F /* BLApplianceController.xm in Sources */,
+				898F105D15B7CA9B0014433F /* BLAppManager.m in Sources */,
+				898F105E15B7CA9B0014433F /* BLAppMerchantInfo.xm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8D5B49A704867FD3000E48DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB911B08733D790010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = beigelist;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1DEB911C08733D790010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = beigelist;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		1DEB911F08733D790010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.3;
+			};
+			name = Debug;
+		};
+		1DEB912008733D790010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB911A08733D790010E9CD /* Build configuration list for PBXNativeTarget "beigelist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB911B08733D790010E9CD /* Debug */,
+				1DEB911C08733D790010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB911E08733D790010E9CD /* Build configuration list for PBXProject "beigelist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB911F08733D790010E9CD /* Debug */,
+				1DEB912008733D790010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

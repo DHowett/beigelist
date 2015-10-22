@@ -26,10 +26,17 @@
 - (int)computeAccessModeForAppliance:(id)appliance withCategoryIdentifier:(id)categoryIdentifier;
 @end
 
-extern "C" void BRSystemLog(int level, NSString *format, ...);
 /* }}} */
 
 #import "Beigelist.h"
+
+#import <objc/runtime.h>
+ template <typename Type_>
+ static inline Type_ &MSHookIvar(id self, const char *name) {
+     Ivar ivar(class_getInstanceVariable(object_getClass(self), name));
+     void *pointer(ivar == NULL ? NULL : reinterpret_cast<char *>(self) + ivar_getOffset(ivar));
+     return *reinterpret_cast<Type_ *>(pointer);
+ }
 
 static BOOL _8F455Plus = NO;
 
@@ -53,7 +60,7 @@ static NSMutableArray *_applianceLoadListeners = nil;
 
 	Class principalClass = [applianceBundle principalClass];
 	if(![principalClass conformsToProtocol:@protocol(BRAppliance)]) {
-		BRSystemLog(3, @"Appliance %@'s principal class %@ does not conform to the BRAppliance protocol.", [applianceBundle bundleIdentifier], NSStringFromClass(principalClass));
+		NSLog(@"Appliance %@'s principal class %@ does not conform to the BRAppliance protocol.", [applianceBundle bundleIdentifier], NSStringFromClass(principalClass));
 		return nil;
 	}
 
@@ -62,21 +69,21 @@ static NSMutableArray *_applianceLoadListeners = nil;
 	NSString *antiFeatureName = [infoDictionary objectForKey:@"FRAntiFeatureName"];
 	if(featureName) {
 		if(![[BRFeatureManager sharedInstance] isFeatureEnabled:featureName]) {
-			BRSystemLog(3, @"Appliance %@ not loaded due to missing feature %@.", [applianceBundle bundleIdentifier], featureName);
+			NSLog(@"Appliance %@ not loaded due to missing feature %@.", [applianceBundle bundleIdentifier], featureName);
 			return nil;
 		}
 	}
 
 	if(antiFeatureName) {
 		if([[BRFeatureManager sharedInstance] isFeatureEnabled:antiFeatureName]) {
-			BRSystemLog(3, @"Appliance %@ not loaded due to present anti-feature %@.", [applianceBundle bundleIdentifier], antiFeatureName);
+			NSLog(@"Appliance %@ not loaded due to present anti-feature %@.", [applianceBundle bundleIdentifier], antiFeatureName);
 			return nil;
 		}
 	}
 
 	int access = [[BRParentalControlManager sharedInstance] computeAccessModeForAppliance:[applianceInfo key] withCategoryIdentifier:nil];
 	if(access == 1) {
-		BRSystemLog(3, @"Appliance %@ not loaded due parental control.", [applianceBundle bundleIdentifier]);
+		NSLog(@"Appliance %@ not loaded due parental control.", [applianceBundle bundleIdentifier]);
 		return nil;
 	}
 
@@ -88,7 +95,7 @@ static NSMutableArray *_applianceLoadListeners = nil;
 
 	id<BRAppliance> appliance = [[[principalClass alloc] init] autorelease];
 	if([[appliance applianceCategories] count] == 0 && [applianceInfo hideIfNoCategories]) {
-		BRSystemLog(3, @"Appliance %@ not loaded because it doesn't have any categories.", [applianceBundle bundleIdentifier]);
+		NSLog(@"Appliance %@ not loaded because it doesn't have any categories.", [applianceBundle bundleIdentifier]);
 		return nil;
 	}
 
@@ -127,7 +134,7 @@ static NSMutableArray *_applianceLoadListeners = nil;
 
 %class BRApplianceManager
 %ctor {
-	BRSystemLog(3, @"beigelist (beigelist-%s) loaded.", VERSION);
-	%init;
+	NSLog(@"beigelist (beigelist-%s) loaded.", VERSION);
+	//%init;
 	_8F455Plus = [%c(BRApplianceManager) instancesRespondToSelector:@selector(setAppliances:)];
 }

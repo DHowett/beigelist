@@ -2,3 +2,5 @@ _
 .debmake
 .theos
 obj
+.DS_Store
+*iphone*

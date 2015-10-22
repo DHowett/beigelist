@@ -2,3 +2,11 @@
 It's named 0 because that's logically before pretty much anything else. _ didn't work. :(.
 
 Thanks to bholland, nitoTV, hedsick, and all of awkwardTV!
+
+---
+
+This readme has not been updated for a while ;) The latest incarnation of beigelist requires
+
+0bacon.dylib mobile substrate tweak because it fixes a bug between AppleTV.framework and UIKit.framework - this was added in 4.4.x/5.0
+
+The latest version is a merge of Espresso for 5.1 loading by Brandon Holland and the original beigelist.
